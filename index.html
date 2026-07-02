@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renta Familiar — Gestión operacional gratis para anfitriones Airbnb en Perú</title>
+<meta name="description" content="Check-in digital de huéspedes con IA, sincronización automática con Airbnb, limpiezas con evidencia fotográfica y reportes a tu equipo. Gratis en etapa de lanzamiento. Hecho en Perú.">
+<link rel="canonical" href="https://rentafamiliar.com/">
+<meta name="theme-color" content="#FE4500">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- Open Graph: vista previa al compartir por WhatsApp, Facebook, LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rentafamiliar.com/">
+<meta property="og:title" content="Renta Familiar — Tu Airbnb, administrado solo">
+<meta property="og:description" content="Check-in digital con IA, sincronización con Airbnb, limpiezas con evidencia y reportes automáticos. Gratis en etapa de lanzamiento.">
+<meta property="og:image" content="https://rentafamiliar.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Renta Familiar",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Gestión operacional para anfitriones Airbnb: check-in digital de huéspedes, sincronización de reservas, limpiezas con evidencia y reportes automáticos.",
+  "url": "https://rentafamiliar.com/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PEN" },
+  "provider": { "@type": "Organization", "name": "Pragma TI", "url": "https://pragma-ti.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Archivo+Black&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#FE4500;
+    --coral-oscuro:#CC3800;
+    --tinta:#0E3E46;
+    --tinta-suave:#155059;
+    --papel:#FBF7F2;
+    --blanco:#FFFFFF;
+    --verde:#1FA97A;
+    --ambar:#F5A623;
+    --gris:#5A5560;
+    --linea:#EAE2D8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    background:#EDE7DF;
+    color:var(--tinta);
+    -webkit-font-smoothing:antialiased;
+  }
+  .boletin{
+    max-width:820px;
+    margin:24px auto;
+    background:var(--papel);
+    box-shadow:0 24px 60px rgba(14,62,70,.20);
+    overflow:hidden;
+  }
+
+  /* ============ BARRA SUPERIOR ============ */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 40px;background:var(--blanco);
+    border-bottom:1px solid var(--linea);
+  }
+  .logo{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;
+    letter-spacing:-.02em;display:flex;align-items:center;gap:10px;
+  }
+  .logo-img{height:42px;width:auto;display:block}
+  .logo em{font-style:normal;color:var(--coral)}
+  .pill-gratis{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;
+    background:var(--verde);color:#fff;
+    padding:8px 16px;border-radius:999px;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(254,69,0,.30), transparent 60%),
+      radial-gradient(600px 380px at -10% 110%, rgba(245,166,35,.14), transparent 60%),
+      var(--tinta);
+    color:#fff;
+    padding:56px 40px 48px;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;
+  }
+  .hero .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ambar);
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-family:'Archivo Black','Archivo',sans-serif;
+    font-size:46px;line-height:1.04;letter-spacing:-.015em;
+    margin-bottom:18px;
+  }
+  .hero h1 span{color:var(--coral)}
+  .hero p.baja{
+    font-size:16.5px;line-height:1.55;color:#C9E2E0;max-width:40ch;
+    margin-bottom:22px;
+  }
+  .hero .chips{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{
+    font-size:12.5px;font-weight:600;color:#EFEAF8;
+    border:1px solid rgba(255,255,255,.22);border-radius:999px;
+    padding:7px 14px;background:rgba(255,255,255,.05);
+  }
+
+  /* Burbuja WhatsApp — elemento firma */
+  .telefono{
+    background:#0B141A;border-radius:26px;padding:14px 12px 18px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 18px 44px rgba(0,0,0,.45);
+    transform:rotate(1.6deg);
+  }
+  .telefono .wa-head{
+    display:flex;align-items:center;gap:10px;
+    padding:6px 8px 12px;border-bottom:1px solid rgba(255,255,255,.08);
+    margin-bottom:12px;
+  }
+  .wa-avatar{
+    width:30px;height:30px;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wa-avatar img{width:19px;height:auto;display:block}
+  .wa-head .nombre{font-size:13px;font-weight:600;color:#E9EDEF}
+  .wa-head .estado{font-size:10.5px;color:#8696A0}
+  .burbuja{
+    background:#005C4B;color:#E9EDEF;border-radius:12px 12px 4px 12px;
+    padding:11px 13px;font-size:13px;line-height:1.5;
+    max-width:96%;margin-left:auto;margin-bottom:9px;
+  }
+  .burbuja .link{
+    display:block;margin-top:7px;font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;font-weight:600;color:#53BDEB;word-break:break-all;
+  }
+  .burbuja .hora{display:block;text-align:right;font-size:10px;color:#8FBFB5;margin-top:5px}
+  .burbuja.respuesta{
+    background:#202C33;border-radius:12px 12px 12px 4px;
+    margin-left:0;margin-right:auto;
+  }
+  .burbuja.respuesta .hora{color:#8696A0}
+  .wa-nota{
+    text-align:center;font-size:11px;color:#8696A0;margin-top:10px;
+  }
+
+  /* ============ DOLORES ============ */
+  .dolores{padding:44px 40px 8px}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--coral);
+    margin-bottom:10px;
+  }
+  .dolores h2, .funciones h2, .pasos h2{
+    font-family:'Archivo',sans-serif;font-weight:700;
+    font-size:30px;letter-spacing:-.02em;margin-bottom:26px;
+  }
+  .dolores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .dolor{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:18px;font-size:14px;line-height:1.5;color:var(--gris);
+  }
+  .dolor b{color:var(--tinta);display:block;margin-bottom:6px;font-size:15px}
+  .dolor .emoji{font-size:22px;display:block;margin-bottom:10px}
+
+  /* ============ FUNCIONALIDADES ============ */
+  .funciones{padding:44px 40px 12px}
+  .fun-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .fun{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:16px;
+    padding:22px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .fun .icono{
+    flex:0 0 46px;width:46px;height:46px;border-radius:12px;
+    background:linear-gradient(135deg,#FFE9E4,#FFF6EC);
+    display:flex;align-items:center;justify-content:center;font-size:23px;
+    border:1px solid #F5DDD2;
+  }
+  .fun h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:16.5px;margin-bottom:5px;letter-spacing:-.01em}
+  .fun p{font-size:13.5px;line-height:1.55;color:var(--gris)}
+  .fun p b{color:var(--coral-oscuro)}
+
+  /* ============ PASOS ============ */
+  .pasos{padding:44px 40px}
+  .pasos-caja{
+    background:var(--tinta);border-radius:20px;padding:34px 32px;color:#fff;
+  }
+  .pasos-caja h2{color:#fff;margin-bottom:6px}
+  .pasos-caja .sub{color:#A7CBC9;font-size:14.5px;margin-bottom:26px}
+  .pasos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .paso{padding:0 22px;border-left:1px dashed rgba(255,255,255,.22)}
+  .paso:first-child{border-left:none;padding-left:0}
+  .paso .num{
+    font-family:'Archivo Black',sans-serif;font-size:34px;color:var(--coral);
+    margin-bottom:8px;
+  }
+  .paso h4{font-family:'Archivo',sans-serif;font-size:15.5px;font-weight:600;margin-bottom:6px}
+  .paso p{font-size:13px;line-height:1.55;color:#C9E2E0}
+  .paso .mono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ambar)}
+
+  /* ============ PRECIO + CTA ============ */
+  .precio{
+    padding:48px 40px 54px;text-align:center;
+    background:
+      radial-gradient(560px 300px at 50% 0%, rgba(31,169,122,.10), transparent 70%),
+      var(--papel);
+  }
+  .precio .tacha{
+    font-family:'Archivo',sans-serif;font-size:17px;color:var(--gris);
+    text-decoration:line-through;text-decoration-color:var(--coral);
+    text-decoration-thickness:2px;margin-bottom:2px;
+  }
+  .precio .gratis{
+    font-family:'Archivo Black',sans-serif;font-size:74px;letter-spacing:-.02em;
+    color:var(--verde);line-height:1;margin-bottom:10px;
+  }
+  .precio .honesto{
+    font-size:15px;color:var(--gris);max-width:52ch;margin:0 auto 28px;line-height:1.6;
+  }
+  .precio .honesto b{color:var(--tinta)}
+  .cta-btn{
+    display:inline-block;background:var(--coral);color:#fff;text-decoration:none;
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;
+    padding:17px 38px;border-radius:14px;letter-spacing:.01em;
+    box-shadow:0 12px 28px rgba(254,69,0,.35);
+    transition:transform .15s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px)}
+  .cta-sub{
+    margin-top:14px;font-size:13.5px;color:var(--gris);
+  }
+  .cta-sub a{color:var(--tinta);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--coral)}
+  .cta-sub .mono{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--tinta)}
+  .cupos{
+    display:inline-block;margin-top:20px;font-size:12px;font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--ambar);
+    border:1px dashed var(--ambar);border-radius:999px;padding:7px 16px;
+  }
+
+  /* ============ FOOTER ============ */
+  .pie{
+    background:var(--tinta);color:#8FB6B4;
+    padding:18px 40px;display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;
+  }
+  .pie b{color:#E3F2F0;font-family:'Archivo',sans-serif}
+  .pie a{color:#E3F2F0;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(254,69,0,.7)}
+  .pie a:hover{color:#fff}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:720px){
+    .hero{grid-template-columns:1fr;padding:40px 24px}
+    .hero h1{font-size:36px}
+    .telefono{transform:none;max-width:340px;margin:0 auto}
+    .topbar,.dolores,.funciones,.pasos,.precio,.pie{padding-left:24px;padding-right:24px}
+    .dolores-grid,.fun-grid,.pasos-grid{grid-template-columns:1fr}
+    .paso{border-left:none;border-top:1px dashed rgba(255,255,255,.22);padding:18px 0 0;margin-top:18px}
+    .paso:first-child{border-top:none;margin-top:0;padding-top:0}
+    .precio .gratis{font-size:56px}
+  }
+
+  /* ============ IMPRESIÓN / PDF ============ */
+  @media print{
+    body{background:#fff}
+    .boletin{margin:0;box-shadow:none;max-width:100%}
+    .hero,.pasos-caja,.pie{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .dolores,.funciones,.pasos,.precio{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="boletin">
+
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    <div class="logo"><img class="logo-img" alt="Logo Renta Familiar" src="data:image/png;base64,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">Renta <em>Familiar</em></div>
+    <div class="pill-gratis">Gratis · Etapa de lanzamiento</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Gestión operacional para anfitriones Airbnb</div>
+      <h1>Tu Airbnb,<br>administrado <span>solo</span>.</h1>
+      <p class="baja">Check-in digital de huéspedes, limpiezas con evidencia y reportes automáticos a tu equipo. Todo desde tu celular, sin instalar nada.</p>
+      <div class="chips">
+        <span class="chip">📱 iPhone y Android</span>
+        <span class="chip">🔗 Se conecta a tu calendario Airbnb</span>
+        <span class="chip">🇵🇪 Hecho en Perú</span>
+      </div>
+    </div>
+
+    <!-- ELEMENTO FIRMA: la conversación real de WhatsApp -->
+    <div class="telefono">
+      <div class="wa-head">
+        <div class="wa-avatar"><img alt="" src="data:image/png;base64,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"></div>
+        <div>
+          <div class="nombre">Anfitrión · Depto 606</div>
+          <div class="estado">en línea</div>
+        </div>
+      </div>
+      <div class="burbuja">
+        ¡Hola Valeria! Bienvenida 🙌 Completa tu check-in aquí antes de llegar:
+        <span class="link">checkin.rentafamiliar.com/20FWSWM8OB</span>
+        <span class="hora">10:42 ✓✓</span>
+      </div>
+      <div class="burbuja respuesta">
+        ¡Listo! Tomé la foto de mi DNI y salió todo automático 😄 Llegamos a la 1pm 🚗
+        <span class="hora">10:45</span>
+      </div>
+      <div class="wa-nota">El huésped se registra solo. Tú solo envías el enlace en automático o manual.</div>
+    </div>
+  </div>
+
+  <!-- DOLORES -->
+  <div class="dolores">
+    <div class="kicker">¿Te suena?</div>
+    <h2>El anfitrión hace de todo. Menos descansar.</h2>
+    <div class="dolores-grid">
+      <div class="dolor">
+        <span class="emoji">😮‍💨</span>
+        <b>Perseguir datos del huésped</b>
+        Nombre, documento, hora de llegada, placa del auto… mensaje por mensaje, huésped por huésped.
+      </div>
+      <div class="dolor">
+        <span class="emoji">🧹</span>
+        <b>Coordinar limpiezas a ciegas</b>
+        ¿Ya limpiaron el 606? ¿Cómo quedó? ¿Encontraron algo olvidado? Nadie te avisa a tiempo.
+      </div>
+      <div class="dolor">
+        <span class="emoji">🗂️</span>
+        <b>Cero registro al fin de mes</b>
+        Todo vive en chats y papelitos. Si necesitas el historial de un huésped, a excavar en WhatsApp.
+      </div>
+    </div>
+  </div>
+
+  <!-- FUNCIONALIDADES -->
+  <div class="funciones">
+    <div class="kicker">Lo que hace por ti</div>
+    <h2>Ocho tareas que dejas de hacer a mano</h2>
+    <div class="fun-grid">
+      <div class="fun">
+        <div class="icono">📸</div>
+        <div>
+          <h3>Check-in digital con IA</h3>
+          <p>El huésped fotografía su documento y la inteligencia artificial <b>lee y llena los datos sola</b>: nombre, número, tipo. Sin tipeos, sin errores.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🪪</div>
+        <div>
+          <h3>Autollenado con RENIEC y Migraciones</h3>
+          <p>¿Prefiere digitar? Con solo el número de DNI o carnet de extranjería, <b>el nombre completo aparece al instante</b> desde fuentes oficiales.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🔄</div>
+        <div>
+          <h3>Sincronización automática con Airbnb</h3>
+          <p>Tus reservas <b>se importan solas</b> desde el calendario de Airbnb. Nuevas, cambios y cancelaciones, sin copiar nada a mano.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🤝</div>
+        <div>
+          <h3>Reservas directas, también</h3>
+          <p>¿Te reservan por WhatsApp o recomendación? Regístralas en segundos y conviven en <b>el mismo calendario</b> que las de Airbnb.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🧼</div>
+        <div>
+          <h3>Limpiezas con evidencia fotográfica</h3>
+          <p>Tu personal registra <b>cómo se encontró el depa, fotos de la limpieza, objetos olvidados y deterioros</b>. Todo queda documentado.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">📬</div>
+        <div>
+          <h3>Reportes diarios a tu equipo</h3>
+          <p>Conserje, administrador y limpieza reciben <b>su correo automático a la hora que elijas</b>, con los check-ins y limpiezas del día.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🔔</div>
+        <div>
+          <h3>Notificaciones automáticas</h3>
+          <p>Recibe un correo <b>al instante</b> cuando un huésped completa su check-in o se cierra una limpieza. Sin perseguir a nadie.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🛡️</div>
+        <div>
+          <h3>Registro formal de huéspedes</h3>
+          <p>Historial completo con documento y foto: <b>respaldo ante incidentes</b> y orden para cumplir con el registro de huéspedes de tu hospedaje.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASOS -->
+  <div class="pasos">
+    <div class="pasos-caja">
+      <div class="kicker" style="color:var(--ambar)">Así de simple</div>
+      <h2>Funcionando en 3 pasos</h2>
+      <div class="sub">Sin instalaciones, sin capacitaciones, sin tarjeta de crédito.</div>
+      <div class="pasos-grid">
+        <div class="paso">
+          <div class="num">1</div>
+          <h4>Conecta tu Airbnb</h4>
+          <p>Pega el enlace de tu calendario Airbnb <span class="mono">(iCal)</span> una sola vez. Tus reservas empiezan a llegar solas.</p>
+        </div>
+        <div class="paso">
+          <div class="num">2</div>
+          <h4>Envía el enlace al huésped</h4>
+          <p>Cada reserva genera su <span class="mono">enlace corto</span> de check-in. Lo mandas por WhatsApp y listo.</p>
+        </div>
+        <div class="paso">
+          <div class="num">3</div>
+          <h4>Todo queda registrado</h4>
+          <p>Datos, fotos, horas, limpiezas y reportes al equipo, <span class="mono">automático</span>, mientras tú haces otra cosa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRECIO + CTA -->
+  <div class="precio">
+    <div class="tacha">S/ 99 al mes</div>
+    <div class="gratis">GRATIS</div>
+    <p class="honesto"><b>Estamos en etapa de lanzamiento</b> y buscamos anfitriones fundadores. Úsalo sin pagar, exprímelo con tus departamentos reales y ayúdanos a crear nuevas funcionalidades.</p>
+    <a class="cta-btn" href="https://wa.me/51998320401?text=Hola%2C%20quiero%20probar%20Renta%20Familiar%20gratis">💬 Quiero mi acceso gratis</a>
+    <div class="cta-sub">o escríbenos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> · Ingresa a <a href="https://checkin.rentafamiliar.com"><span class="mono">checkin.rentafamiliar.com</span></a></div>
+    <div><span class="cupos">⚡ Cupos limitados de la etapa gratuita</span></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="pie">
+    <div><b>Renta Familiar</b> · Un producto de <a href="https://pragma-ti.com/">Pragma TI</a></div>
+    <div>Lima, Perú · <a href="https://rentafamiliar.com/">rentafamiliar.com</a></div>
+  </div>
+
+</div>
+</body>
+</html>
