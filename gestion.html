@@ -276,6 +276,13 @@
     width:100%;height:120px;object-fit:cover;border-radius:10px;
     display:block;margin-bottom:12px;border:1px solid var(--linea);
   }
+  .plat-mini{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:10px 16px;display:flex;align-items:center;gap:14px;
+    margin-bottom:14px;justify-content:center;
+  }
+  .plat-mini img{max-height:52px;display:block}
+  .plat-mini .leyenda{font-size:12px;color:var(--gris);max-width:150px;line-height:1.4}
   .plataformas{padding:10px 40px 0;text-align:center}
   .plataformas .marco{
     display:inline-block;background:var(--blanco);border:1px solid var(--linea);
@@ -305,15 +312,17 @@
   .hero-g .baja{font-size:16px;line-height:1.6;color:var(--gris);max-width:56ch}
 
   /* Collage de fotos flotantes */
-  .collage{position:relative;height:380px}
+  .collage{position:relative;height:400px}
   .collage img{
     position:absolute;object-fit:cover;border-radius:16px;
     box-shadow:0 18px 40px rgba(14,62,70,.22);border:4px solid #fff;
     animation:flotar 7s ease-in-out infinite;
   }
-  .collage img:nth-child(1){width:62%;height:64%;top:0;right:4%;z-index:2}
-  .collage img:nth-child(2){width:52%;height:52%;bottom:2%;left:0;z-index:3;animation-delay:1.4s}
-  .collage img:nth-child(3){width:40%;height:42%;bottom:12%;right:0;z-index:1;animation-delay:2.8s}
+  .collage img:nth-child(1){width:54%;height:54%;top:0;right:0;z-index:3}
+  .collage img:nth-child(2){width:46%;height:46%;bottom:0;left:2%;z-index:4;animation-delay:1.2s}
+  .collage img:nth-child(3){width:36%;height:38%;bottom:6%;right:4%;z-index:2;animation-delay:2.4s}
+  .collage img:nth-child(4){width:32%;height:36%;top:4%;left:0;z-index:2;animation-delay:3.4s}
+  .collage img:nth-child(5){width:30%;height:30%;top:42%;left:33%;z-index:5;animation-delay:4.6s}
   @keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
   .cifras{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
@@ -410,10 +419,18 @@
         <span class="gar">Procedimientos y protocolos</span>
       </div>
     </div>
-    <div class="collage reveal d2">
-      <img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="eager" onerror="this.style.display='none'">
-      <img src="/img/depa-2.jpeg" alt="Sala de departamento en alquiler temporal" loading="lazy" onerror="this.style.display='none'">
-      <img src="/img/depa-3.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.style.display='none'">
+    <div>
+      <div class="plat-mini reveal d1">
+        <img src="/img/plataformas.png" alt="Publicamos en Airbnb, Booking.com y Vrbo" loading="eager" onerror="this.closest('.plat-mini').style.display='none'">
+        <div class="leyenda">Publicado en las principales plataformas</div>
+      </div>
+      <div class="collage reveal d2">
+        <img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="eager" onerror="this.style.display='none'">
+        <img src="/img/depa-2.jpeg" alt="Sala de departamento en alquiler temporal" loading="lazy" onerror="this.style.display='none'">
+        <img src="/img/depa-3.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.style.display='none'">
+        <img src="/img/depa-6.jpeg" alt="Dormitorio de departamento en Lima" loading="lazy" onerror="this.style.display='none'">
+        <img src="/img/depa-7.jpeg" alt="Sala decorada de departamento gestionado" loading="lazy" onerror="this.style.display='none'">
+      </div>
     </div>
   </div>
 
@@ -430,14 +447,6 @@
         <div class="tec-item reveal d4"><b>Reportes autom&#225;ticos:</b> sabes qui&#233;n lleg&#243;, c&#243;mo qued&#243; tu depa y c&#243;mo va tu rentabilidad.</div>
       </div>
     </div>
-  </div>
-
-  <!-- PLATAFORMAS -->
-  <div class="plataformas reveal">
-    <div class="marco">
-      <img src="/img/plataformas.png" alt="Publicamos en Airbnb, Booking.com y Vrbo" loading="lazy" onerror="this.closest('.plataformas').style.display='none'">
-    </div>
-    <div class="leyenda">Tu departamento, publicado en las principales plataformas</div>
   </div>
 
   <!-- 9 SERVICIOS -->
@@ -469,6 +478,7 @@
       <figure class="reveal d1"><img src="/img/depa-5.jpeg" alt="Departamento amoblado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
       <figure class="reveal d2"><img src="/img/depa-6.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
       <figure class="reveal d3"><img src="/img/depa-7.jpeg" alt="Sala de departamento en gestion de alquiler" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal"><img src="/img/depa-8.jpeg" alt="Departamento de la cartera gestionada en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
     </div>
   </div>
 
