@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestor de alquileres temporales gratis | Renta Familiar</title>
+<meta name="description" content="Gestor de alquileres temporales para anfitriones Airbnb en Perú: check-in digital con IA, sincronización de reservas, limpiezas con evidencia y avisos automáticos por WhatsApp. Gratis en etapa de lanzamiento.">
+<link rel="canonical" href="https://rentafamiliar.com/gestor-alquileres-temporales">
+<meta name="theme-color" content="#FE4500">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rentafamiliar.com/gestor-alquileres-temporales">
+<meta property="og:title" content="Gestor de alquileres temporales que trabaja solo | Renta Familiar">
+<meta property="og:description" content="Check-in digital con IA, reservas sincronizadas con Airbnb, limpiezas con evidencia y WhatsApp automático a huéspedes y equipo. Gratis en lanzamiento.">
+<meta property="og:image" content="https://rentafamiliar.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Renta Familiar",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Gestor de alquileres temporales: check-in digital de huéspedes con IA, sincronización de reservas Airbnb, limpiezas con evidencia fotográfica y notificaciones automáticas por WhatsApp.",
+  "url": "https://rentafamiliar.com/gestor-alquileres-temporales",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PEN" },
+  "provider": { "@type": "Organization", "name": "Pragma TI", "url": "https://pragma-ti.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es un gestor de alquileres temporales?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Es un sistema que organiza la operación diaria de departamentos en alquiler de corta estadía: reservas, check-in de huéspedes, limpiezas y comunicación con el equipo. Renta Familiar lo hace en automático: importa tus reservas de Airbnb, envía a cada huésped su enlace de check-in por WhatsApp y reporta todo a tu equipo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona con Airbnb?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Se conecta al calendario iCal de Airbnb y tus reservas se importan solas: nuevas, cambios y cancelaciones. También puedes registrar reservas directas de WhatsApp o recomendación en el mismo calendario." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Está gratis en etapa de lanzamiento. Buscamos anfitriones fundadores que lo usen con sus departamentos reales y nos ayuden a priorizar nuevas funcionalidades." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi conserje y personal de limpieza necesitan usuario y clave?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Cada uno recibe su tarjeta por WhatsApp con un botón que abre su página segura mediante un enlace personal: el conserje registra llegadas y el personal de limpieza confirma con fotos, todo desde su celular." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Archivo+Black&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#FE4500;
+    --coral-oscuro:#CC3800;
+    --tinta:#0E3E46;
+    --tinta-suave:#155059;
+    --papel:#FBF7F2;
+    --blanco:#FFFFFF;
+    --verde:#1FA97A;
+    --ambar:#F5A623;
+    --gris:#5A5560;
+    --linea:#EAE2D8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    background:#EDE7DF;
+    color:var(--tinta);
+    -webkit-font-smoothing:antialiased;
+  }
+  .boletin{
+    max-width:820px;
+    margin:24px auto;
+    background:var(--papel);
+    box-shadow:0 24px 60px rgba(14,62,70,.20);
+    overflow:hidden;
+  }
+
+  /* ============ BARRA SUPERIOR ============ */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 40px;background:var(--blanco);
+    border-bottom:1px solid var(--linea);
+  }
+  .logo{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;
+    letter-spacing:-.02em;display:flex;align-items:center;gap:10px;
+  }
+  .logo-img{height:42px;width:auto;display:block}
+  .logo em{font-style:normal;color:var(--coral)}
+  .pill-gratis{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;
+    background:var(--verde);color:#fff;
+    padding:8px 16px;border-radius:999px;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(254,69,0,.30), transparent 60%),
+      radial-gradient(600px 380px at -10% 110%, rgba(245,166,35,.14), transparent 60%),
+      var(--tinta);
+    color:#fff;
+    padding:56px 40px 48px;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;
+  }
+  .hero .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ambar);
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-family:'Archivo Black','Archivo',sans-serif;
+    font-size:46px;line-height:1.04;letter-spacing:-.015em;
+    margin-bottom:18px;
+  }
+  .hero h1 span{color:var(--coral)}
+  .hero p.baja{
+    font-size:16.5px;line-height:1.55;color:#C9E2E0;max-width:40ch;
+    margin-bottom:22px;
+  }
+  .hero .chips{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{
+    font-size:12.5px;font-weight:600;color:#EFEAF8;
+    border:1px solid rgba(255,255,255,.22);border-radius:999px;
+    padding:7px 14px;background:rgba(255,255,255,.05);
+  }
+
+  /* Burbuja WhatsApp — elemento firma */
+  .telefono{
+    background:#0B141A;border-radius:26px;padding:14px 12px 18px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 18px 44px rgba(0,0,0,.45);
+    transform:rotate(1.6deg);
+  }
+  .telefono .wa-head{
+    display:flex;align-items:center;gap:10px;
+    padding:6px 8px 12px;border-bottom:1px solid rgba(255,255,255,.08);
+    margin-bottom:12px;
+  }
+  .wa-avatar{
+    width:30px;height:30px;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wa-avatar img{width:19px;height:auto;display:block}
+  .wa-head .nombre{font-size:13px;font-weight:600;color:#E9EDEF}
+  .wa-head .estado{font-size:10.5px;color:#8696A0}
+  .burbuja{
+    background:#005C4B;color:#E9EDEF;border-radius:12px 12px 4px 12px;
+    padding:11px 13px;font-size:13px;line-height:1.5;
+    max-width:96%;margin-left:auto;margin-bottom:9px;
+  }
+  .burbuja .link{
+    display:block;margin-top:7px;font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;font-weight:600;color:#53BDEB;word-break:break-all;
+  }
+  .burbuja .hora{display:block;text-align:right;font-size:10px;color:#8FBFB5;margin-top:5px}
+  .burbuja.respuesta{
+    background:#202C33;border-radius:12px 12px 12px 4px;
+    margin-left:0;margin-right:auto;
+  }
+  .burbuja.respuesta .hora{color:#8696A0}
+  .wa-nota{
+    text-align:center;font-size:11px;color:#8696A0;margin-top:10px;
+  }
+
+  /* ============ DOLORES ============ */
+  .dolores{padding:44px 40px 8px}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--coral);
+    margin-bottom:10px;
+  }
+  .dolores h2, .funciones h2, .pasos h2{
+    font-family:'Archivo',sans-serif;font-weight:700;
+    font-size:30px;letter-spacing:-.02em;margin-bottom:26px;
+  }
+  .dolores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .dolor{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:18px;font-size:14px;line-height:1.5;color:var(--gris);
+  }
+  .dolor b{color:var(--tinta);display:block;margin-bottom:6px;font-size:15px}
+  .dolor .emoji{font-size:22px;display:block;margin-bottom:10px}
+
+  /* ============ FUNCIONALIDADES ============ */
+  .funciones{padding:44px 40px 12px}
+  .fun-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .fun{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:16px;
+    padding:22px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .fun .icono{
+    flex:0 0 46px;width:46px;height:46px;border-radius:12px;
+    background:linear-gradient(135deg,#FFE9E4,#FFF6EC);
+    display:flex;align-items:center;justify-content:center;font-size:23px;
+    border:1px solid #F5DDD2;
+  }
+  .fun h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:16.5px;margin-bottom:5px;letter-spacing:-.01em}
+  .fun p{font-size:13.5px;line-height:1.55;color:var(--gris)}
+  .fun p b{color:var(--coral-oscuro)}
+
+  /* ============ PASOS ============ */
+  .pasos{padding:44px 40px}
+  .pasos-caja{
+    background:var(--tinta);border-radius:20px;padding:34px 32px;color:#fff;
+  }
+  .pasos-caja h2{color:#fff;margin-bottom:6px}
+  .pasos-caja .sub{color:#A7CBC9;font-size:14.5px;margin-bottom:26px}
+  .pasos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .paso{padding:0 22px;border-left:1px dashed rgba(255,255,255,.22)}
+  .paso:first-child{border-left:none;padding-left:0}
+  .paso .num{
+    font-family:'Archivo Black',sans-serif;font-size:34px;color:var(--coral);
+    margin-bottom:8px;
+  }
+  .paso h4{font-family:'Archivo',sans-serif;font-size:15.5px;font-weight:600;margin-bottom:6px}
+  .paso p{font-size:13px;line-height:1.55;color:#C9E2E0}
+  .paso .mono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ambar)}
+
+  /* ============ PRECIO + CTA ============ */
+  .precio{
+    padding:48px 40px 54px;text-align:center;
+    background:
+      radial-gradient(560px 300px at 50% 0%, rgba(31,169,122,.10), transparent 70%),
+      var(--papel);
+  }
+  .precio .tacha{
+    font-family:'Archivo',sans-serif;font-size:17px;color:var(--gris);
+    text-decoration:line-through;text-decoration-color:var(--coral);
+    text-decoration-thickness:2px;margin-bottom:2px;
+  }
+  .precio .gratis{
+    font-family:'Archivo Black',sans-serif;font-size:74px;letter-spacing:-.02em;
+    color:var(--verde);line-height:1;margin-bottom:10px;
+  }
+  .precio .honesto{
+    font-size:15px;color:var(--gris);max-width:52ch;margin:0 auto 28px;line-height:1.6;
+  }
+  .precio .honesto b{color:var(--tinta)}
+  .cta-btn{
+    display:inline-block;background:var(--coral);color:#fff;text-decoration:none;
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;
+    padding:17px 38px;border-radius:14px;letter-spacing:.01em;
+    box-shadow:0 12px 28px rgba(254,69,0,.35);
+    transition:transform .15s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px)}
+  .cta-sub{
+    margin-top:14px;font-size:13.5px;color:var(--gris);
+  }
+  .cta-sub a{color:var(--tinta);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--coral)}
+  .cta-sub .mono{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--tinta)}
+  .cupos{
+    display:inline-block;margin-top:20px;font-size:12px;font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--ambar);
+    border:1px dashed var(--ambar);border-radius:999px;padding:7px 16px;
+  }
+
+  /* ============ FOOTER ============ */
+  .pie{
+    background:var(--tinta);color:#8FB6B4;
+    padding:18px 40px;display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;
+  }
+  .pie b{color:#E3F2F0;font-family:'Archivo',sans-serif}
+  .pie a{color:#E3F2F0;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(254,69,0,.7)}
+  .pie a:hover{color:#fff}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:720px){
+    .hero{grid-template-columns:1fr;padding:40px 24px}
+    .hero h1{font-size:36px}
+    .telefono{transform:none;max-width:340px;margin:0 auto}
+    .topbar,.dolores,.funciones,.pasos,.precio,.pie{padding-left:24px;padding-right:24px}
+    .dolores-grid,.fun-grid,.pasos-grid{grid-template-columns:1fr}
+    .paso{border-left:none;border-top:1px dashed rgba(255,255,255,.22);padding:18px 0 0;margin-top:18px}
+    .paso:first-child{border-top:none;margin-top:0;padding-top:0}
+    .precio .gratis{font-size:56px}
+  }
+
+  /* ============ IMPRESIÓN / PDF ============ */
+  @media print{
+    body{background:#fff}
+    .boletin{margin:0;box-shadow:none;max-width:100%}
+    .hero,.pasos-caja,.pie{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .dolores,.funciones,.pasos,.precio{page-break-inside:avoid}
+  }
+</style>
+<style>
+  /* Ajustes propios de esta landing */
+  .hero-seo{padding:52px 40px 34px}
+  .hero-seo h1{
+    font-family:'Archivo Black',sans-serif;font-size:42px;line-height:1.08;
+    letter-spacing:-.02em;margin:10px 0 16px;
+  }
+  .hero-seo h1 span{color:var(--coral)}
+  .hero-seo .baja{font-size:16.5px;line-height:1.6;color:var(--gris);max-width:64ch}
+  .bloque{padding:36px 40px 8px}
+  .bloque h2{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:28px;
+    letter-spacing:-.02em;margin-bottom:14px;
+  }
+  .bloque p{font-size:15px;line-height:1.65;color:var(--gris);max-width:70ch;margin-bottom:12px}
+  .bloque p b{color:var(--tinta)}
+  .faq{padding:36px 40px 8px}
+  .faq h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.02em;margin-bottom:18px}
+  .faq-item{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:18px 20px;margin-bottom:12px;
+  }
+  .faq-item h3{font-family:'Archivo',sans-serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--tinta)}
+  .faq-item p{font-size:14px;line-height:1.6;color:var(--gris)}
+  @media (max-width:720px){
+    .hero-seo{padding:40px 24px 26px}
+    .hero-seo h1{font-size:32px}
+    .bloque,.faq{padding-left:24px;padding-right:24px}
+  }
+</style>
+</head>
+<body>
+<div class="boletin">
+
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    <div class="logo"><a href="/" style="text-decoration:none;color:inherit">Renta <em>Familiar</em></a></div>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <div class="pill-gratis">Gratis &#183; Etapa de lanzamiento</div>
+    </div>
+  </div>
+
+  <!-- HERO SEO -->
+  <div class="hero-seo">
+    <div class="eyebrow">Gestor de alquileres temporales &#183; Per&#250;</div>
+    <h1>El gestor de alquileres temporales que <span>trabaja solo</span>.</h1>
+    <p class="baja">Si administras departamentos en Airbnb o alquileres de corta estad&#237;a, Renta Familiar organiza tu operaci&#243;n completa: reservas sincronizadas, check-in digital de hu&#233;spedes con IA, limpiezas con evidencia fotogr&#225;fica y avisos autom&#225;ticos por WhatsApp a hu&#233;spedes y equipo. T&#250; solo supervisas.</p>
+  </div>
+
+  <!-- QUE ES -->
+  <div class="bloque">
+    <div class="kicker">La operaci&#243;n, sin fricci&#243;n</div>
+    <h2>&#191;Qu&#233; hace un gestor de alquileres temporales?</h2>
+    <p>Administrar alquileres temporales es perseguir datos de hu&#233;spedes mensaje por mensaje, coordinar limpiezas a ciegas y vivir con el historial regado en chats. Un gestor de alquileres temporales concentra todo eso en un solo lugar &#8212; y <b>Renta Familiar va un paso m&#225;s all&#225;: lo ejecuta en autom&#225;tico</b>.</p>
+    <p>Conectas tu calendario de Airbnb una sola vez. Desde ah&#237;, cada reserva genera su enlace de check-in, cada llegada notifica a tu conserje con un bot&#243;n para registrarla, cada salida programa la limpieza con evidencia en fotos, y t&#250; recibes reportes diarios <b>sin escribirle a nadie</b>.</p>
+  </div>
+
+  <!-- FUNCIONALIDADES (resumen) -->
+  <div class="bloque">
+    <div class="kicker">Lo esencial</div>
+    <h2>Todo lo que dejas de hacer a mano</h2>
+    <p><b>Check-in digital con IA:</b> el hu&#233;sped fotograf&#237;a su documento y los datos se llenan solos; o digita su DNI y el nombre aparece desde RENIEC y Migraciones.</p>
+    <p><b>Reservas sincronizadas:</b> Airbnb por iCal y reservas directas de WhatsApp, en un mismo calendario.</p>
+    <p><b>Equipo coordinado por WhatsApp:</b> tarjetas autom&#225;ticas al conserje (bot&#243;n &#8220;Registrar llegadas&#8221;) y al personal de limpieza (bot&#243;n &#8220;Registrar Limpieza&#8221; con fotos de evidencia), sin usuarios ni claves.</p>
+    <p><b>Supervisi&#243;n sin intervenir:</b> indicaciones de acceso al hu&#233;sped, reportes diarios y alertas al anfitri&#243;n por correo y WhatsApp.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <div class="kicker">Preguntas frecuentes</div>
+    <h2>Lo que todo anfitri&#243;n pregunta</h2>
+    <div class="faq-item">
+      <h3>&#191;Qu&#233; es un gestor de alquileres temporales?</h3>
+      <p>Un sistema que organiza reservas, check-in de hu&#233;spedes, limpiezas y comunicaci&#243;n del equipo en la renta de corta estad&#237;a. Renta Familiar lo hace en autom&#225;tico desde tu calendario de Airbnb.</p>
+    </div>
+    <div class="faq-item">
+      <h3>&#191;Funciona con Airbnb?</h3>
+      <p>S&#237;: se conecta al calendario iCal y tus reservas se importan solas &#8212; nuevas, cambios y cancelaciones. Las reservas directas tambi&#233;n conviven en el mismo calendario.</p>
+    </div>
+    <div class="faq-item">
+      <h3>&#191;Cu&#225;nto cuesta?</h3>
+      <p>Gratis en etapa de lanzamiento: buscamos anfitriones fundadores que lo usen con sus departamentos reales.</p>
+    </div>
+    <div class="faq-item">
+      <h3>&#191;Mi conserje y limpieza necesitan usuario y clave?</h3>
+      <p>No. Cada uno recibe su tarjeta de WhatsApp con un bot&#243;n que abre su p&#225;gina segura por enlace personal, directo desde su celular.</p>
+    </div>
+  </div>
+
+  <!-- PRECIO + CTA -->
+  <div class="precio">
+    <div class="tacha">S/ 99 al mes</div>
+    <div class="gratis">GRATIS</div>
+    <p class="honesto"><b>Estamos en etapa de lanzamiento</b> y buscamos anfitriones fundadores. &#218;salo sin pagar, expr&#237;melo con tus departamentos reales y ay&#250;danos a crear nuevas funcionalidades.</p>
+    <a class="cta-btn" href="https://wa.me/51998320401?text=Hola%2C%20quiero%20probar%20el%20gestor%20de%20alquileres%20temporales%20gratis">&#128172; Quiero mi acceso gratis</a>
+    <div class="cta-sub">o escr&#237;benos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> &#183; Conoce m&#225;s en <a href="/"><span class="mono">rentafamiliar.com</span></a></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="pie">
+    <div><b>Renta Familiar</b> &#183; Un producto de <a href="https://pragma-ti.com/">Pragma TI</a></div>
+    <div>Lima, Per&#250; &#183; <a href="/">Inicio</a> &#183; <a href="/privacidad.html">Privacidad</a></div>
+  </div>
+
+</div>
+</body>
+</html>
