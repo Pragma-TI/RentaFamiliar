@@ -271,56 +271,113 @@
     .hero,.pasos-caja,.pie{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .dolores,.funciones,.pasos,.precio{page-break-inside:avoid}
   }
+
+  .serv-img{
+    width:100%;height:120px;object-fit:cover;border-radius:10px;
+    display:block;margin-bottom:12px;border:1px solid var(--linea);
+  }
+  .plataformas{padding:10px 40px 0;text-align:center}
+  .plataformas .marco{
+    display:inline-block;background:var(--blanco);border:1px solid var(--linea);
+    border-radius:14px;padding:14px 26px;
+  }
+  .plataformas img{max-height:84px;display:block}
+  .plataformas .leyenda{font-size:12.5px;color:var(--gris);margin-top:8px}
+  .precio{
+    background:
+      linear-gradient(rgba(251,247,242,.93), rgba(251,247,242,.93)),
+      url('/img/Fondo.jpg') center/cover no-repeat;
+    border-radius:20px;
+  }
+  @media (max-width:720px){
+    .plataformas{padding-left:24px;padding-right:24px}
+    .serv-img{height:140px}
+  }
 </style>
 <style>
-  /* Ajustes propios de /gestion */
-  .hero-seo{padding:52px 40px 30px}
-  .hero-seo h1{
-    font-family:'Archivo Black',sans-serif;font-size:42px;line-height:1.08;
+  /* ===== /gestion v2: animaciones e imagenes ===== */
+  .hero-g{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;padding:48px 40px 26px}
+  .hero-g h1{
+    font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1.08;
     letter-spacing:-.02em;margin:10px 0 16px;
   }
-  .hero-seo h1 span{color:var(--coral)}
-  .hero-seo .baja{font-size:16.5px;line-height:1.6;color:var(--gris);max-width:64ch}
+  .hero-g h1 span{color:var(--coral)}
+  .hero-g .baja{font-size:16px;line-height:1.6;color:var(--gris);max-width:56ch}
+
+  /* Collage de fotos flotantes */
+  .collage{position:relative;height:380px}
+  .collage img{
+    position:absolute;object-fit:cover;border-radius:16px;
+    box-shadow:0 18px 40px rgba(14,62,70,.22);border:4px solid #fff;
+    animation:flotar 7s ease-in-out infinite;
+  }
+  .collage img:nth-child(1){width:62%;height:64%;top:0;right:4%;z-index:2}
+  .collage img:nth-child(2){width:52%;height:52%;bottom:2%;left:0;z-index:3;animation-delay:1.4s}
+  .collage img:nth-child(3){width:40%;height:42%;bottom:12%;right:0;z-index:1;animation-delay:2.8s}
+  @keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
   .cifras{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
   .cifra{
     background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
-    padding:14px 20px;min-width:150px;
+    padding:14px 20px;min-width:150px;transition:transform .25s,box-shadow .25s;
   }
+  .cifra:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(14,62,70,.10)}
   .cifra .n{font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--coral);line-height:1.1}
   .cifra .t{font-size:12.5px;color:var(--gris);margin-top:2px}
+  .garantias{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .gar{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:999px;
+    padding:8px 16px;font-size:13px;color:var(--tinta);font-weight:600;
+    transition:transform .2s,border-color .2s;
+  }
+  .gar:hover{transform:translateY(-2px);border-color:var(--coral)}
+
   .bloque{padding:36px 40px 8px}
   .bloque h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.02em;margin-bottom:14px}
-  .bloque p{font-size:15px;line-height:1.65;color:var(--gris);max-width:70ch;margin-bottom:12px}
-  .bloque p b{color:var(--tinta)}
-  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
-  .serv{
-    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
-    padding:18px;font-size:13.5px;line-height:1.55;color:var(--gris);
-  }
-  .serv b{color:var(--tinta);display:block;margin-bottom:6px;font-size:14.5px}
-  .serv .num{
-    font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--coral);
-    display:block;margin-bottom:8px;
-  }
-  .tec-caja{
-    background:var(--tinta);border-radius:20px;padding:30px 30px;color:#fff;margin-top:8px;
-  }
-  .tec-caja h2{color:#fff;font-family:'Archivo',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:8px}
+  .tec-caja{background:var(--tinta);border-radius:20px;padding:30px;color:#fff;margin-top:8px;overflow:hidden;position:relative}
+  .tec-caja h2{color:#fff;font-size:26px;margin-bottom:8px}
   .tec-caja .sub{color:#A7CBC9;font-size:14.5px;margin-bottom:18px;max-width:66ch;line-height:1.55}
   .tec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 22px}
   .tec-item{font-size:13.5px;color:#C9E2E0;line-height:1.5;padding-left:20px;position:relative}
   .tec-item::before{content:"✓";position:absolute;left:0;color:var(--verde);font-weight:700}
   .tec-item b{color:#fff}
-  .garantias{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .gar{
-    background:var(--blanco);border:1px solid var(--linea);border-radius:999px;
-    padding:8px 16px;font-size:13px;color:var(--tinta);font-weight:600;
+
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .serv{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:18px;font-size:13.5px;line-height:1.55;color:var(--gris);
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .serv:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(14,62,70,.10);border-color:var(--coral)}
+  .serv b{color:var(--tinta);display:block;margin-bottom:6px;font-size:14.5px}
+  .serv .num{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--coral);display:block;margin-bottom:8px}
+
+  .galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+  .galeria figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--linea);background:var(--blanco)}
+  .galeria img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .5s ease}
+  .galeria figure:hover img{transform:scale(1.06)}
+
+  /* Revelado al hacer scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+  .reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.40s}
+
+  @media (prefers-reduced-motion: reduce){
+    .collage img{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .serv,.cifra,.gar,.galeria img{transition:none}
+  }
+  @media (max-width:860px){
+    .hero-g{grid-template-columns:1fr;padding:40px 24px 22px}
+    .hero-g h1{font-size:31px}
+    .collage{height:300px;max-width:480px}
   }
   @media (max-width:720px){
-    .hero-seo{padding:40px 24px 22px}
-    .hero-seo h1{font-size:32px}
     .bloque{padding-left:24px;padding-right:24px}
     .serv-grid,.tec-grid{grid-template-columns:1fr}
+    .galeria{grid-template-columns:repeat(2,1fr)}
+    .galeria img{height:150px}
   }
 </style>
 </head>
@@ -335,63 +392,93 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero-seo">
-    <div class="eyebrow">Gesti&#243;n de alquileres temporales &#183; Lima, Per&#250;</div>
-    <h1>Tu departamento produce.<br>T&#250; <span>no te ocupas de nada</span>.</h1>
-    <p class="baja">Delega la administraci&#243;n de tu departamento para alquiler temporal vacacional y corporativo: nosotros lo habilitamos, lo publicamos, atendemos a cada hu&#233;sped y te reportamos los resultados. Con procedimientos probados y <b>tecnolog&#237;a propia que automatiza toda la operaci&#243;n</b>.</p>
-    <div class="cifras">
-      <div class="cifra"><div class="n">95%</div><div class="t">de ocupaci&#243;n garantizada</div></div>
-      <div class="cifra"><div class="n">2,500+</div><div class="t">reservas gestionadas</div></div>
-      <div class="cifra"><div class="n">Superhost</div><div class="t">categor&#237;a permanente</div></div>
+  <!-- HERO CON COLLAGE -->
+  <div class="hero-g">
+    <div>
+      <div class="eyebrow reveal">Gesti&#243;n de alquileres temporales &#183; Lima, Per&#250;</div>
+      <h1 class="reveal d1">Tu departamento produce.<br>T&#250; <span>no te ocupas de nada</span>.</h1>
+      <p class="baja reveal d2">Delega la administraci&#243;n de tu departamento para alquiler temporal vacacional y corporativo: nosotros lo habilitamos, lo publicamos, atendemos a cada hu&#233;sped y te reportamos los resultados. Con procedimientos probados y <b>tecnolog&#237;a propia que automatiza toda la operaci&#243;n</b>.</p>
+      <div class="cifras">
+        <div class="cifra reveal d2"><div class="n"><span class="contador" data-fin="95">0</span>%</div><div class="t">de ocupaci&#243;n garantizada</div></div>
+        <div class="cifra reveal d3"><div class="n"><span class="contador" data-fin="2500">0</span>+</div><div class="t">reservas gestionadas</div></div>
+        <div class="cifra reveal d4"><div class="n">Superhost</div><div class="t">categor&#237;a permanente</div></div>
+      </div>
+      <div class="garantias reveal d5">
+        <span class="gar">Servicio integral 360&#176;</span>
+        <span class="gar">Factura y boleta</span>
+        <span class="gar">Todos los medios de pago</span>
+        <span class="gar">Procedimientos y protocolos</span>
+      </div>
     </div>
-    <div class="garantias">
-      <span class="gar">Servicio integral 360&#176;</span>
-      <span class="gar">Factura y boleta</span>
-      <span class="gar">Todos los medios de pago</span>
-      <span class="gar">Procedimientos y protocolos</span>
+    <div class="collage reveal d2">
+      <img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="eager" onerror="this.style.display='none'">
+      <img src="/img/depa-2.jpeg" alt="Sala de departamento en alquiler temporal" loading="lazy" onerror="this.style.display='none'">
+      <img src="/img/depa-3.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.style.display='none'">
     </div>
   </div>
 
   <!-- TECNOLOGIA PROPIA -->
   <div class="bloque">
-    <div class="tec-caja">
+    <div class="tec-caja reveal">
       <div class="kicker" style="color:var(--ambar)">Nuestro diferencial</div>
-      <h2>Operaci&#243;n potenciada con nuestra propia aplicaci&#243;n</h2>
+      <h2 style="font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.02em">Operaci&#243;n potenciada con nuestra propia aplicaci&#243;n</h2>
       <div class="sub">No administramos con cuadernos ni chats sueltos: desarrollamos Renta Familiar, una plataforma que automatiza la operaci&#243;n completa y te da visibilidad total de tu propiedad.</div>
       <div class="tec-grid">
-        <div class="tec-item"><b>Check-in digital con IA:</b> cada hu&#233;sped se registra con su documento antes de llegar.</div>
-        <div class="tec-item"><b>Sincronizaci&#243;n autom&#225;tica</b> del calendario de Airbnb y reservas directas.</div>
-        <div class="tec-item"><b>Conserje y limpieza coordinados por WhatsApp</b> con registro de llegadas y evidencia fotogr&#225;fica.</div>
-        <div class="tec-item"><b>Reportes autom&#225;ticos:</b> sabes qui&#233;n lleg&#243;, c&#243;mo qued&#243; tu depa y c&#243;mo va tu rentabilidad.</div>
+        <div class="tec-item reveal d1"><b>Check-in digital con IA:</b> cada hu&#233;sped se registra con su documento antes de llegar.</div>
+        <div class="tec-item reveal d2"><b>Sincronizaci&#243;n autom&#225;tica</b> del calendario de Airbnb y reservas directas.</div>
+        <div class="tec-item reveal d3"><b>Conserje y limpieza coordinados por WhatsApp</b> con registro de llegadas y evidencia fotogr&#225;fica.</div>
+        <div class="tec-item reveal d4"><b>Reportes autom&#225;ticos:</b> sabes qui&#233;n lleg&#243;, c&#243;mo qued&#243; tu depa y c&#243;mo va tu rentabilidad.</div>
       </div>
     </div>
   </div>
 
+  <!-- PLATAFORMAS -->
+  <div class="plataformas reveal">
+    <div class="marco">
+      <img src="/img/plataformas.png" alt="Publicamos en Airbnb, Booking.com y Vrbo" loading="lazy" onerror="this.closest('.plataformas').style.display='none'">
+    </div>
+    <div class="leyenda">Tu departamento, publicado en las principales plataformas</div>
+  </div>
+
   <!-- 9 SERVICIOS -->
   <div class="bloque">
-    <div class="kicker">Servicio integral</div>
-    <h2>Nueve frentes que cubrimos por ti</h2>
+    <div class="kicker reveal">Servicio integral</div>
+    <h2 class="reveal d1">Nueve frentes que cubrimos por ti</h2>
     <div class="serv-grid">
-      <div class="serv"><span class="num">1</span><b>Habilitaci&#243;n del departamento</b>Inspecci&#243;n del inmueble, documentaci&#243;n de caracter&#237;sticas y definici&#243;n de tarifas competitivas.</div>
-      <div class="serv"><span class="num">2</span><b>Publicaciones optimizadas</b>Descripciones claras, fotos profesionales y palabras clave que aumentan la visibilidad en las plataformas.</div>
-      <div class="serv"><span class="num">3</span><b>Reservas y disponibilidad</b>Calendario administrado, confirmaciones en tiempo real y sincronizaci&#243;n entre plataformas.</div>
-      <div class="serv"><span class="num">4</span><b>Asistencia al hu&#233;sped 24/7</b>Informaci&#243;n clara antes de la llegada, instrucciones de check-in y soporte durante la estad&#237;a.</div>
-      <div class="serv"><span class="num">5</span><b>Limpieza y mantenimiento</b>Personal coordinado con evidencia fotogr&#225;fica de cada limpieza y control de deterioros.</div>
-      <div class="serv"><span class="num">6</span><b>Optimizaci&#243;n de tarifas</b>Precios ajustados por demanda, temporada y competencia para maximizar ingresos y ocupaci&#243;n.</div>
-      <div class="serv"><span class="num">7</span><b>Gestiones legales y fiscales</b>Operaci&#243;n conforme a la normativa, registro de la propiedad y asesor&#237;a en obligaciones tributarias.</div>
-      <div class="serv"><span class="num">8</span><b>Gesti&#243;n de opiniones</b>Monitoreo y respuesta de rese&#241;as para cuidar la reputaci&#243;n y convertirla en m&#225;s reservas.</div>
-      <div class="serv"><span class="num">9</span><b>An&#225;lisis de desempe&#241;o</b>Informes peri&#243;dicos de ingresos, ocupaci&#243;n y feedback para optimizar la estrategia de tu propiedad.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/1-habilitar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">1</span><b>Habilitaci&#243;n del departamento</b>Inspecci&#243;n del inmueble, documentaci&#243;n de caracter&#237;sticas y definici&#243;n de tarifas competitivas.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/2-publicar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">2</span><b>Publicaciones optimizadas</b>Descripciones claras, fotos profesionales y palabras clave que aumentan la visibilidad en las plataformas.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/3-reservas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">3</span><b>Reservas y disponibilidad</b>Calendario administrado, confirmaciones en tiempo real y sincronizaci&#243;n entre plataformas.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/4-asistencia.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">4</span><b>Asistencia al hu&#233;sped 24/7</b>Informaci&#243;n clara antes de la llegada, instrucciones de check-in y soporte durante la estad&#237;a.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/5-limpieza.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">5</span><b>Limpieza y mantenimiento</b>Personal coordinado con evidencia fotogr&#225;fica de cada limpieza y control de deterioros.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/6-tarifas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">6</span><b>Optimizaci&#243;n de tarifas</b>Precios ajustados por demanda, temporada y competencia para maximizar ingresos y ocupaci&#243;n.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/7-facturas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">7</span><b>Gestiones legales y fiscales</b>Operaci&#243;n conforme a la normativa, registro de la propiedad y asesor&#237;a en obligaciones tributarias.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/8-evaluar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">8</span><b>Gesti&#243;n de opiniones</b>Monitoreo y respuesta de rese&#241;as para cuidar la reputaci&#243;n y convertirla en m&#225;s reservas.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/9-desempenio.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">9</span><b>An&#225;lisis de desempe&#241;o</b>Informes peri&#243;dicos de ingresos, ocupaci&#243;n y feedback para optimizar la estrategia de tu propiedad.</div>
+    </div>
+  </div>
+
+  <!-- GALERIA -->
+  <div class="bloque">
+    <div class="kicker reveal">Nuestra cartera</div>
+    <h2 class="reveal d1">Departamentos que ya gestionamos en Lima</h2>
+    <div class="galeria">
+      <figure class="reveal"><img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d1"><img src="/img/depa-2.jpeg" alt="Departamento en alquiler temporal, Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d2"><img src="/img/depa-3.jpeg" alt="Departamento amoblado gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d3"><img src="/img/depa-4.jpeg" alt="Departamento corporativo en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d1"><img src="/img/depa-5.jpeg" alt="Departamento amoblado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d2"><img src="/img/depa-6.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d3"><img src="/img/depa-7.jpeg" alt="Sala de departamento en gestion de alquiler" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="precio">
-    <div class="kicker" style="margin-bottom:6px">Conversemos</div>
-    <h2 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin-bottom:10px">&#191;Cu&#225;nto puede producir tu departamento?</h2>
-    <p class="honesto">Cu&#233;ntanos d&#243;nde est&#225; tu propiedad y te damos una <b>evaluaci&#243;n sin costo</b> de su potencial de alquiler temporal.</p>
-    <a class="cta-btn" href="https://wa.me/51998320401?text=Hola%2C%20tengo%20un%20departamento%20y%20quiero%20delegar%20su%20administraci%C3%B3n">&#128172; Quiero delegar mi departamento</a>
-    <div class="cta-sub">o escr&#237;benos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> &#183; <a href="mailto:hostfamily.limaperu@gmail.com"><span class="mono">hostfamily.limaperu@gmail.com</span></a></div>
+    <div class="kicker reveal" style="margin-bottom:6px">Conversemos</div>
+    <h2 class="reveal d1" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin-bottom:10px">&#191;Cu&#225;nto puede producir tu departamento?</h2>
+    <p class="honesto reveal d2">Cu&#233;ntanos d&#243;nde est&#225; tu propiedad y te damos una <b>evaluaci&#243;n sin costo</b> de su potencial de alquiler temporal.</p>
+    <a class="cta-btn reveal d3" href="https://wa.me/51998320401?text=Hola%2C%20tengo%20un%20departamento%20y%20quiero%20delegar%20su%20administraci%C3%B3n">&#128172; Quiero delegar mi departamento</a>
+    <div class="cta-sub reveal d4">o escr&#237;benos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> &#183; <a href="mailto:hostfamily.limaperu@gmail.com"><span class="mono">hostfamily.limaperu@gmail.com</span></a></div>
   </div>
 
   <!-- FOOTER -->
@@ -401,5 +488,51 @@
   </div>
 
 </div>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Revelado al hacer scroll
+  var revs = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    revs.forEach(function (el) { el.classList.add("visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revs.forEach(function (el) { io.observe(el); });
+  }
+
+  // Contadores animados (95, 2500)
+  function animarContador(el) {
+    var fin = parseInt(el.getAttribute("data-fin"), 10);
+    if (reduce) { el.textContent = fin.toLocaleString("es-PE"); return; }
+    var dur = 1400, t0 = null;
+    function paso(t) {
+      if (!t0) { t0 = t; }
+      var p = Math.min((t - t0) / dur, 1);
+      p = 1 - Math.pow(1 - p, 3); // suavizado
+      el.textContent = Math.round(fin * p).toLocaleString("es-PE");
+      if (p < 1) { requestAnimationFrame(paso); }
+    }
+    requestAnimationFrame(paso);
+  }
+  var conts = document.querySelectorAll(".contador");
+  if ("IntersectionObserver" in window && !reduce) {
+    var ioc = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { animarContador(e.target); ioc.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    conts.forEach(function (el) { ioc.observe(el); });
+  } else {
+    conts.forEach(animarContador);
+  }
+})();
+</script>
 </body>
 </html>
