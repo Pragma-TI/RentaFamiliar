@@ -208,7 +208,7 @@
 
 
   /* ============ COLABORACION (diagrama) ============ */
-  .colab{padding:44px 40px 12px}
+  .colab{padding:44px 40px 8px}
   .colab h2{
     font-family:'Archivo',sans-serif;font-weight:700;
     font-size:30px;letter-spacing:-.02em;margin-bottom:8px;
@@ -218,10 +218,10 @@
     background:var(--blanco);border:1px solid var(--linea);border-radius:16px;
     padding:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;
   }
-  .colab-caja svg{display:block;min-width:840px;width:100%;height:auto}
   .colab-nota{margin-top:10px;font-size:12.5px;color:var(--gris);display:none}
   @media (max-width:720px){
     .colab{padding-left:24px;padding-right:24px}
+    .colab-caja svg{min-width:760px}
     .colab-nota{display:block}
   }
 
@@ -342,127 +342,13 @@
     </div>
   </div>
 
-  <!-- DOLORES -->
-  <div class="dolores">
-    <div class="kicker">¿Te suena?</div>
-    <h2>El anfitrión hace de todo. Menos descansar.</h2>
-    <div class="dolores-grid">
-      <div class="dolor">
-        <span class="emoji">😮‍💨</span>
-        <b>Perseguir datos del huésped</b>
-        Nombre, documento, hora de llegada, placa del auto… mensaje por mensaje, huésped por huésped.
-      </div>
-      <div class="dolor">
-        <span class="emoji">🧹</span>
-        <b>Coordinar limpiezas a ciegas</b>
-        ¿Ya limpiaron el 606? ¿Cómo quedó? ¿Encontraron algo olvidado? Nadie te avisa a tiempo.
-      </div>
-      <div class="dolor">
-        <span class="emoji">🗂️</span>
-        <b>Cero registro al fin de mes</b>
-        Todo vive en chats y papelitos. Si necesitas el historial de un huésped, a excavar en WhatsApp.
-      </div>
-    </div>
-  </div>
-
-  <!-- FUNCIONALIDADES -->
-  <div class="funciones">
-    <div class="kicker">Lo que hace por ti</div>
-    <h2>Ocho tareas que dejas de hacer a mano</h2>
-    <div class="fun-grid">
-      <div class="fun">
-        <div class="icono">📸</div>
-        <div>
-          <h3>Check-in digital con IA</h3>
-          <p>El huésped fotografía su documento y la inteligencia artificial <b>lee y llena los datos sola</b>: nombre, número, tipo. Sin tipeos, sin errores.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🪪</div>
-        <div>
-          <h3>Autollenado con RENIEC y Migraciones</h3>
-          <p>¿Prefiere digitar? Con solo el número de DNI o carnet de extranjería, <b>el nombre completo aparece al instante</b> desde fuentes oficiales.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🔄</div>
-        <div>
-          <h3>Sincronización automática con Airbnb</h3>
-          <p>Tus reservas <b>se importan solas</b> desde el calendario de Airbnb. Nuevas, cambios y cancelaciones, sin copiar nada a mano.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🤝</div>
-        <div>
-          <h3>Reservas directas, también</h3>
-          <p>¿Te reservan por WhatsApp o recomendación? Regístralas en segundos y conviven en <b>el mismo calendario</b> que las de Airbnb.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🧼</div>
-        <div>
-          <h3>Limpiezas con evidencia fotográfica</h3>
-          <p>Tu personal registra <b>cómo se encontró el depa, fotos de la limpieza, objetos olvidados y deterioros</b>. Todo queda documentado.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">📬</div>
-        <div>
-          <h3>Reportes diarios a tu equipo</h3>
-          <p>Conserje, administrador y limpieza reciben su resumen del día <b>por WhatsApp y correo</b>, a la hora que elijas, con los check-ins y limpiezas de la jornada.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🔔</div>
-        <div>
-          <h3>Notificaciones automáticas por WhatsApp</h3>
-          <p>El huésped recibe <b>su enlace de check-in por WhatsApp</b> antes de llegar. Tú y tu equipo, un aviso <b>al instante</b> por WhatsApp y correo cuando se completa un check-in o se cierra una limpieza. Sin perseguir a nadie.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🛡️</div>
-        <div>
-          <h3>Registro formal de huéspedes</h3>
-          <p>Historial completo con documento y foto: <b>respaldo ante incidentes</b> y orden para cumplir con el registro de huéspedes de tu hospedaje.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PASOS -->
-  <div class="pasos">
-    <div class="pasos-caja">
-      <div class="kicker" style="color:var(--ambar)">Así de simple</div>
-      <h2>Funcionando en 3 pasos</h2>
-      <div class="sub">Sin instalaciones, sin capacitaciones, sin tarjeta de crédito.</div>
-      <div class="pasos-grid">
-        <div class="paso">
-          <div class="num">1</div>
-          <h4>Conecta tu Airbnb</h4>
-          <p>Pega el enlace de tu calendario Airbnb <span class="mono">(iCal)</span> una sola vez. Tus reservas empiezan a llegar solas.</p>
-        </div>
-        <div class="paso">
-          <div class="num">2</div>
-          <h4>Envía el enlace al huésped</h4>
-          <p>Cada reserva genera su <span class="mono">enlace corto</span> de check-in. Lo mandas por WhatsApp y listo.</p>
-        </div>
-        <div class="paso">
-          <div class="num">3</div>
-          <h4>Todo queda registrado</h4>
-          <p>Datos, fotos, horas, limpiezas y reportes al equipo, <span class="mono">automático</span>, mientras tú haces otra cosa.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
   <!-- COLABORACION: diagrama del proceso -->
   <div class="colab">
     <div class="kicker">Todo el equipo, conectado</div>
     <h2>As&iacute; colabora todo tu equipo, en autom&aacute;tico</h2>
     <div class="colab-sub">Airbnb, hu&eacute;sped, conserje, limpieza y t&uacute; &mdash; coordinados por un motor de comunicaci&oacute;n que env&iacute;a a cada uno su enlace seguro por WhatsApp y registra todo mientras t&uacute; haces otra cosa.</div>
     <div class="colab-caja">
-<svg viewBox="0 78 1080 726" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', Arial, sans-serif">
+<svg style="display:block;width:100%;height:auto" viewBox="0 78 1080 726" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', Arial, sans-serif">
   <defs>
     <marker id="fNar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#FE4500"/>
@@ -586,6 +472,96 @@
 
     </div>
     <div class="colab-nota">Desliza horizontalmente para ver el proceso completo &rarr;</div>
+  </div>
+
+  <!-- FUNCIONALIDADES -->
+  <div class="funciones">
+    <div class="kicker">Lo que hace por ti</div>
+    <h2>Ocho tareas que dejas de hacer a mano</h2>
+    <div class="fun-grid">
+      <div class="fun">
+        <div class="icono">📸</div>
+        <div>
+          <h3>Check-in digital con IA</h3>
+          <p>El huésped fotografía su documento y la IA <b>lee y llena los datos sola</b>. ¿Prefiere digitar? Con su DNI o carnet, <b>el nombre aparece al instante</b> desde RENIEC y Migraciones.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🛎️</div>
+        <div>
+          <h3>Registro de llegadas del conserje</h3>
+          <p>Tu conserje recibe la tarjeta del día por WhatsApp con el botón <b>&ldquo;Registrar llegadas&rdquo;</b>: un toque abre su página segura y marca quién llegó, desde su celular, <b>sin usuarios ni claves</b>.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🔄</div>
+        <div>
+          <h3>Sincronización automática con Airbnb</h3>
+          <p>Tus reservas <b>se importan solas</b> desde el calendario de Airbnb. Nuevas, cambios y cancelaciones, sin copiar nada a mano.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🤝</div>
+        <div>
+          <h3>Reservas directas, también</h3>
+          <p>¿Te reservan por WhatsApp o recomendación? Regístralas en segundos y conviven en <b>el mismo calendario</b> que las de Airbnb.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🧼</div>
+        <div>
+          <h3>Limpiezas con evidencia fotográfica</h3>
+          <p>Tu personal toca el botón <b>&ldquo;Registrar Limpieza&rdquo;</b> de su tarjeta de WhatsApp y documenta <b>cómo se encontró el depa, la limpieza, objetos olvidados y deterioros</b>, con fotos desde su celular.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">📬</div>
+        <div>
+          <h3>Reportes diarios a tu equipo</h3>
+          <p>Conserje, administrador y limpieza reciben su resumen del día <b>por WhatsApp y correo</b>, a la hora que elijas, con los check-ins y limpiezas de la jornada.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🔔</div>
+        <div>
+          <h3>Notificaciones automáticas por WhatsApp</h3>
+          <p>El huésped recibe <b>su enlace de check-in y las indicaciones de acceso</b> antes de llegar. Tú y tu equipo, avisos <b>al instante</b> cuando se completa un check-in o se cierra una limpieza.</p>
+        </div>
+      </div>
+      <div class="fun">
+        <div class="icono">🛡️</div>
+        <div>
+          <h3>Registro formal de huéspedes</h3>
+          <p>Historial completo con documento y foto: <b>respaldo ante incidentes</b> y orden para cumplir con el registro de huéspedes de tu hospedaje.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASOS -->
+  <div class="pasos">
+    <div class="pasos-caja">
+      <div class="kicker" style="color:var(--ambar)">Así de simple</div>
+      <h2>Funcionando en 3 pasos</h2>
+      <div class="sub">Sin instalaciones, sin capacitaciones, sin tarjeta de crédito.</div>
+      <div class="pasos-grid">
+        <div class="paso">
+          <div class="num">1</div>
+          <h4>Conecta tu Airbnb</h4>
+          <p>Pega el enlace de tu calendario Airbnb <span class="mono">(iCal)</span> una sola vez. Tus reservas empiezan a llegar solas.</p>
+        </div>
+        <div class="paso">
+          <div class="num">2</div>
+          <h4>Envía el enlace al huésped</h4>
+          <p>Cada reserva genera su <span class="mono">enlace corto</span> de check-in. Lo mandas por WhatsApp y listo.</p>
+        </div>
+        <div class="paso">
+          <div class="num">3</div>
+          <h4>Todo queda registrado</h4>
+          <p>Datos, fotos, horas, limpiezas y reportes al equipo, <span class="mono">automático</span>, mientras tú haces otra cosa.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- PRECIO + CTA -->
