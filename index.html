@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renta Familiar — Gestión operacional gratis para anfitriones Airbnb en Perú</title>
-<meta name="description" content="Check-in digital de huéspedes con IA, sincronización automática con Airbnb, limpiezas con evidencia fotográfica y reportes a tu equipo. Gratis en etapa de lanzamiento. Hecho en Perú.">
+<title>Gestión de alquileres temporales en Lima | Delega tu departamento | Renta Familiar</title>
+<meta name="description" content="Incrementa la rentabilidad de tu departamento en Lima: gestión integral de alquiler temporal vacacional y corporativo con 95% de ocupación garantizada, superhost permanente y tecnología propia de automatización. Tú no te ocupas de nada.">
 <link rel="canonical" href="https://rentafamiliar.com/">
 <meta name="theme-color" content="#FE4500">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<!-- Open Graph: vista previa al compartir por WhatsApp, Facebook, LinkedIn -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rentafamiliar.com/">
-<meta property="og:title" content="Renta Familiar — Tu Airbnb, administrado solo">
-<meta property="og:description" content="Check-in digital con IA, sincronización con Airbnb, limpiezas con evidencia y reportes automáticos. Gratis en etapa de lanzamiento.">
+<meta property="og:title" content="Tu departamento produce. Tú no te ocupas de nada.">
+<meta property="og:description" content="Gestión integral de alquiler temporal en Lima: 95% de ocupación garantizada, superhost permanente, factura y boleta, y tecnología propia que automatiza la operación.">
 <meta property="og:image" content="https://rentafamiliar.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,14 +21,12 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Renta Familiar",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Gestión operacional para anfitriones Airbnb: check-in digital de huéspedes, sincronización de reservas, limpiezas con evidencia y reportes automáticos.",
-  "url": "https://rentafamiliar.com/",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PEN" },
-  "provider": { "@type": "Organization", "name": "Pragma TI", "url": "https://pragma-ti.com/" }
+  "@type": "Service",
+  "name": "Gestión de alquileres temporales",
+  "serviceType": "Administración de alquiler temporal vacacional y corporativo",
+  "areaServed": { "@type": "City", "name": "Lima" },
+  "provider": { "@type": "Organization", "name": "Renta Familiar · Pragma TI", "url": "https://rentafamiliar.com/", "email": "hostfamily.limaperu@gmail.com", "telephone": "+51998320401" },
+  "url": "https://rentafamiliar.com/"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -206,25 +203,6 @@
   .paso p{font-size:13px;line-height:1.55;color:#C9E2E0}
   .paso .mono{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ambar)}
 
-
-  /* ============ COLABORACION (diagrama) ============ */
-  .colab{padding:44px 40px 8px}
-  .colab h2{
-    font-family:'Archivo',sans-serif;font-weight:700;
-    font-size:30px;letter-spacing:-.02em;margin-bottom:8px;
-  }
-  .colab-sub{font-size:14.5px;color:var(--gris);margin-bottom:22px;max-width:62ch;line-height:1.55}
-  .colab-caja{
-    background:var(--blanco);border:1px solid var(--linea);border-radius:16px;
-    padding:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;
-  }
-  .colab-nota{margin-top:10px;font-size:12.5px;color:var(--gris);display:none}
-  @media (max-width:720px){
-    .colab{padding-left:24px;padding-right:24px}
-    .colab-caja svg{min-width:760px}
-    .colab-nota{display:block}
-  }
-
   /* ============ PRECIO + CTA ============ */
   .precio{
     padding:48px 40px 54px;text-align:center;
@@ -293,6 +271,155 @@
     .hero,.pasos-caja,.pie{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .dolores,.funciones,.pasos,.precio{page-break-inside:avoid}
   }
+
+  .serv-img{
+    width:100%;height:120px;object-fit:cover;border-radius:10px;
+    display:block;margin-bottom:12px;border:1px solid var(--linea);
+  }
+  .plat-mini{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:14px 16px 12px;display:flex;flex-direction:column;align-items:center;
+    gap:8px;margin-bottom:14px;
+  }
+  .plat-mini img{width:100%;max-width:340px;max-height:150px;object-fit:contain;display:block}
+  .plat-mini .leyenda{font-size:12.5px;color:var(--gris);line-height:1.4;text-align:center}
+  .plataformas{padding:10px 40px 0;text-align:center}
+  .plataformas .marco{
+    display:inline-block;background:var(--blanco);border:1px solid var(--linea);
+    border-radius:14px;padding:14px 26px;
+  }
+  .plataformas img{max-height:84px;display:block}
+  .plataformas .leyenda{font-size:12.5px;color:var(--gris);margin-top:8px}
+  .precio{
+    background:
+      linear-gradient(rgba(251,247,242,.93), rgba(251,247,242,.93)),
+      url('/img/Fondo.jpg') center/cover no-repeat;
+    border-radius:20px;
+  }
+  @media (max-width:720px){
+    .plataformas{padding-left:24px;padding-right:24px}
+    .serv-img{height:140px}
+  }
+</style>
+<style>
+  /* ===== /gestion v2: animaciones e imagenes ===== */
+  .hero-g{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;padding:48px 40px 26px}
+  .hero-g h1{
+    font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1.08;
+    letter-spacing:-.02em;margin:10px 0 16px;
+  }
+  .hero-g h1 span{color:var(--coral)}
+  .hero-g .baja{font-size:16px;line-height:1.6;color:var(--gris);max-width:56ch}
+
+  /* Collage de fotos flotantes */
+  .collage{position:relative;height:430px}
+  .collage img{
+    position:absolute;object-fit:cover;border-radius:16px;
+    box-shadow:0 18px 40px rgba(14,62,70,.22);border:4px solid #fff;
+    animation:flotar 7s ease-in-out infinite;
+  }
+  .collage img:nth-child(1){width:60%;height:58%;top:0;right:0;z-index:3}
+  .collage img:nth-child(2){width:48%;height:50%;bottom:0;left:0;z-index:4;animation-delay:1.2s}
+  .collage img:nth-child(3){width:47%;height:47%;bottom:0;right:1%;z-index:2;animation-delay:2.4s}
+  .collage img:nth-child(4){width:36%;height:42%;top:4%;left:1%;z-index:2;animation-delay:3.4s}
+  .collage img:nth-child(5){width:38%;height:40%;top:31%;left:30%;z-index:5;animation-delay:4.6s}
+  @keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  .cifras{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+  .cifra{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:14px 20px;min-width:150px;transition:transform .25s,box-shadow .25s;
+  }
+  .cifra:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(14,62,70,.10)}
+  .cifra .n{font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--coral);line-height:1.1}
+  .cifra .t{font-size:12.5px;color:var(--gris);margin-top:2px}
+  .garantias{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .gar{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:999px;
+    padding:8px 16px;font-size:13px;color:var(--tinta);font-weight:600;
+    transition:transform .2s,border-color .2s;
+  }
+  .gar:hover{transform:translateY(-2px);border-color:var(--coral)}
+
+  .bloque{padding:36px 40px 8px}
+  .bloque h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.02em;margin-bottom:14px}
+  .tec-caja{background:var(--tinta);border-radius:20px;padding:30px;color:#fff;margin-top:8px;overflow:hidden;position:relative}
+  .tec-caja h2{color:#fff;font-size:26px;margin-bottom:8px}
+  .tec-caja .sub{color:#A7CBC9;font-size:14.5px;margin-bottom:18px;max-width:66ch;line-height:1.55}
+  .tec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 22px}
+  .tec-item{font-size:13.5px;color:#C9E2E0;line-height:1.5;padding-left:20px;position:relative}
+  .tec-item::before{content:"✓";position:absolute;left:0;color:var(--verde);font-weight:700}
+  .tec-item b{color:#fff}
+
+  /* ===== Seccion migracion (dolor -> solucion) ===== */
+  .mig-fila{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:10px;
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;overflow:hidden;
+  }
+  .mig-dolor,.mig-sol{padding:14px 18px;font-size:13.5px;line-height:1.55}
+  .mig-dolor{color:var(--gris);background:#FDF3EF;border-right:1px solid var(--linea)}
+  .mig-dolor::before{content:"✗  ";color:var(--coral);font-weight:700}
+  .mig-sol{color:var(--tinta)}
+  .mig-sol::before{content:"✓  ";color:var(--verde);font-weight:700}
+  .mig-cab{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:8px;
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;
+  }
+  .mig-cab div{padding:0 18px}
+  .mig-cab .c1{color:var(--coral)}
+  .mig-cab .c2{color:var(--verde)}
+  .mig-pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .mig-paso{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:18px;font-size:13.5px;line-height:1.55;color:var(--gris);
+    transition:transform .25s,box-shadow .25s;
+  }
+  .mig-paso:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(14,62,70,.10)}
+  .mig-paso .num{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--verde);display:block;margin-bottom:8px}
+  .mig-paso b{color:var(--tinta)}
+  @media (max-width:720px){
+    .mig-fila{grid-template-columns:1fr}
+    .mig-dolor{border-right:none;border-bottom:1px solid var(--linea)}
+    .mig-cab{display:none}
+    .mig-pasos{grid-template-columns:1fr}
+  }
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .serv{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:14px;
+    padding:18px;font-size:13.5px;line-height:1.55;color:var(--gris);
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .serv:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(14,62,70,.10);border-color:var(--coral)}
+  .serv b{color:var(--tinta);display:block;margin-bottom:6px;font-size:14.5px}
+  .serv .num{font-family:'Archivo Black',sans-serif;font-size:22px;color:var(--coral);display:block;margin-bottom:8px}
+
+  .galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+  .galeria figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--linea);background:var(--blanco)}
+  .galeria img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .5s ease}
+  .galeria figure:hover img{transform:scale(1.06)}
+
+  /* Revelado al hacer scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+  .reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.40s}
+
+  @media (prefers-reduced-motion: reduce){
+    .collage img{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .serv,.cifra,.gar,.galeria img{transition:none}
+  }
+  @media (max-width:860px){
+    .hero-g{grid-template-columns:1fr;padding:40px 24px 22px}
+    .hero-g h1{font-size:31px}
+    .collage{height:300px;max-width:480px}
+  }
+  @media (max-width:720px){
+    .bloque{padding-left:24px;padding-right:24px}
+    .serv-grid,.tec-grid{grid-template-columns:1fr}
+    .galeria{grid-template-columns:repeat(2,1fr)}
+    .galeria img{height:150px}
+  }
 </style>
 </head>
 <body>
@@ -300,286 +427,174 @@
 
   <!-- BARRA SUPERIOR -->
   <div class="topbar">
-    <div class="logo"><img class="logo-img" alt="Logo Renta Familiar" src="data:image/png;base64,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">Renta <em>Familiar</em></div>
+    <div class="logo"><a href="/" style="text-decoration:none;color:inherit">Renta <em>Familiar</em></a></div>
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <a href="/gestion" style="font-size:13px;font-weight:600;color:var(--gris);text-decoration:none">¿Prefieres delegar? <span style="color:var(--coral)">Para propietarios →</span></a>
-      <div class="pill-gratis">Gratis · Etapa de lanzamiento</div>
+      <a href="/sistema" style="font-size:13px;font-weight:600;color:var(--gris);text-decoration:none">&#191;Prefieres administrar t&#250;? <span style="color:var(--coral)">Conoce nuestro sistema &#8594;</span></a>
     </div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
+  <!-- HERO CON COLLAGE -->
+  <div class="hero-g">
     <div>
-      <div class="eyebrow">Gestión operacional para anfitriones Airbnb</div>
-      <h1>Tu Airbnb,<br>administrado <span>solo</span>.</h1>
-      <p class="baja">Check-in digital de huéspedes, limpiezas con evidencia y avisos automáticos por WhatsApp a huéspedes y equipo. Todo desde tu celular, sin instalar nada.</p>
-      <div class="chips">
-        <span class="chip">📱 iPhone y Android</span>
-        <span class="chip">🔗 Se conecta a tu calendario Airbnb</span>
-        <span class="chip">🇵🇪 Hecho en Perú</span>
+      <div class="eyebrow reveal">Gesti&#243;n de alquileres temporales &#183; Lima, Per&#250;</div>
+      <h1 class="reveal d1">Tu departamento produce.<br>T&#250; <span>no te ocupas de nada</span>.</h1>
+      <p class="baja reveal d2">Delega la administraci&#243;n de tu departamento para alquiler temporal vacacional y corporativo: nosotros lo habilitamos, lo publicamos, atendemos a cada hu&#233;sped y te reportamos los resultados. Con procedimientos probados y <b>tecnolog&#237;a propia que automatiza toda la operaci&#243;n</b>.</p>
+      <div class="cifras">
+        <div class="cifra reveal d2"><div class="n"><span class="contador" data-fin="95">0</span>%</div><div class="t">de ocupaci&#243;n garantizada</div></div>
+        <div class="cifra reveal d3"><div class="n"><span class="contador" data-fin="2500">0</span>+</div><div class="t">reservas gestionadas</div></div>
+        <div class="cifra reveal d4"><div class="n">Superhost</div><div class="t">categor&#237;a permanente</div></div>
+      </div>
+      <div class="garantias reveal d5">
+        <span class="gar">Servicio integral 360&#176;</span>
+        <span class="gar">Factura y boleta</span>
+        <span class="gar">Todos los medios de pago</span>
+        <span class="gar">Procedimientos y protocolos</span>
       </div>
     </div>
-
-    <!-- ELEMENTO FIRMA: la conversación real de WhatsApp -->
-    <div class="telefono">
-      <div class="wa-head">
-        <div class="wa-avatar"><img alt="" src="data:image/png;base64,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"></div>
-        <div>
-          <div class="nombre">Anfitrión · Depto 606</div>
-          <div class="estado">en línea</div>
-        </div>
+    <div>
+      <div class="plat-mini reveal d1">
+        <img src="/img/plataformas.png" alt="Publicamos en Airbnb, Booking.com y Vrbo" loading="eager" onerror="this.closest('.plat-mini').style.display='none'">
+        <div class="leyenda">Publicado en las principales plataformas</div>
       </div>
-      <div class="burbuja">
-        ¡Hola Valeria! Bienvenida 🙌 Completa tu check-in aquí antes de llegar:
-        <span class="link">checkin.rentafamiliar.com/20FWSWM8OB</span>
-        <span class="hora">10:42 ✓✓</span>
-      </div>
-      <div class="burbuja respuesta">
-        ¡Listo! Tomé la foto de mi DNI y salió todo automático 😄 Llegamos a la 1pm 🚗
-        <span class="hora">10:45</span>
-      </div>
-      <div class="wa-nota">El enlace sale <b>automático por WhatsApp</b> antes de la llegada. El huésped se registra solo.</div>
-    </div>
-  </div>
-
-  <!-- COLABORACION: diagrama del proceso -->
-  <div class="colab">
-    <div class="kicker">Todo el equipo, conectado</div>
-    <h2>As&iacute; colabora todo tu equipo, en autom&aacute;tico</h2>
-    <div class="colab-sub">Airbnb, hu&eacute;sped, conserje, limpieza y t&uacute; &mdash; coordinados por un motor de comunicaci&oacute;n que env&iacute;a a cada uno su enlace seguro por WhatsApp y registra todo mientras t&uacute; haces otra cosa.</div>
-    <div class="colab-caja">
-<svg style="display:block;width:100%;height:auto" viewBox="0 78 1080 726" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', Arial, sans-serif">
-  <defs>
-    <marker id="fNar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#FE4500"/>
-    </marker>
-    <marker id="fVer" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#1FA97A"/>
-    </marker>
-    <marker id="fPlo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#155059"/>
-    </marker>
-  </defs>
-
-  
-
-
-  <!-- ================= FLECHAS ================= -->
-  <path d="M540,168 L540,306" fill="none" stroke="#FE4500" stroke-width="2.5" marker-end="url(#fNar)"/>
-  <path d="M392,326 C300,314 245,306 195,292" fill="none" stroke="#1FA97A" stroke-width="2.5" marker-end="url(#fVer)"/>
-  <path d="M212,322 C280,344 330,356 392,364" fill="none" stroke="#5A5560" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fPlo)"/>
-  <path d="M392,402 C310,398 252,382 207,354" fill="none" stroke="#1FA97A" stroke-width="2.5" marker-end="url(#fVer)"/>
-  <path d="M392,432 C310,460 250,488 202,516" fill="none" stroke="#FE4500" stroke-width="2.5" marker-end="url(#fNar)"/>
-  <path d="M232,548 C300,528 342,488 402,456" fill="none" stroke="#5A5560" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fPlo)"/>
-  <path d="M688,432 C770,460 830,488 878,516" fill="none" stroke="#1FA97A" stroke-width="2.5" marker-end="url(#fVer)"/>
-  <path d="M848,548 C780,528 738,488 678,456" fill="none" stroke="#5A5560" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fPlo)"/>
-  <path d="M688,352 C770,336 830,320 890,300" fill="none" stroke="#155059" stroke-width="2.5" marker-end="url(#fPlo)"/>
-
-  <!-- ================= AIRBNB ================= -->
-  <rect x="430" y="96" width="220" height="72" rx="10" fill="#FFFFFF" stroke="#FE4500" stroke-width="2"/>
-  <circle cx="540" cy="96" r="18" fill="#FFFFFF" stroke="#FE4500" stroke-width="2"/>
-  <path d="M532,99 L540,90 L548,99 M534,97 L534,104 L546,104 L546,97" fill="none" stroke="#FE4500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="540" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#FE4500">Airbnb</text>
-  <text x="540" y="153" text-anchor="middle" font-size="12" fill="#5A5560">Reservas de Calendarios (iCal)</text>
-
-  <!-- ================= HUB CENTRAL ================= -->
-  <rect x="392" y="306" width="296" height="152" rx="14" fill="#0E3E46"/>
-  <rect x="392" y="306" width="296" height="6" rx="3" fill="#FE4500"/>
-  <text x="540" y="340" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">RENTA FAMILIAR</text>
-  <text x="540" y="360" text-anchor="middle" font-size="12" fill="#A7CBC9">Motor de comunicaci&#243;n autom&#225;tica</text>
-  <text x="540" y="376" text-anchor="middle" font-size="12" fill="#A7CBC9">con inteligencia artificial</text>
-  <rect x="416" y="390" width="112" height="25" rx="12.5" fill="#FFE9E4"/>
-  <text x="472" y="407" text-anchor="middle" font-size="11.5" font-weight="600" fill="#FE4500">WhatsApp</text>
-  <rect x="536" y="390" width="70" height="25" rx="12.5" fill="#E6F5EF"/>
-  <text x="571" y="407" text-anchor="middle" font-size="11.5" font-weight="600" fill="#1FA97A">Correo</text>
-  <rect x="614" y="390" width="52" height="25" rx="12.5" fill="#FFFFFF"/>
-  <text x="640" y="407" text-anchor="middle" font-size="11.5" font-weight="600" fill="#155059">iCal</text>
-  <text x="540" y="440" text-anchor="middle" font-size="11" fill="#A7CBC9">Enlaces seguros por token &#8226; p&#225;ginas p&#250;blicas por rol</text>
-
-  <!-- ================= HUESPED ================= -->
-  <rect x="60" y="216" width="230" height="122" rx="10" fill="#FFFFFF" stroke="#1FA97A" stroke-width="2"/>
-  <circle cx="175" cy="216" r="20" fill="#FFFFFF" stroke="#1FA97A" stroke-width="2"/>
-  <circle cx="172" cy="211" r="5" fill="#1FA97A"/>
-  <path d="M163,227 a 9 7 0 0 1 18 0 z" fill="#1FA97A"/>
-  <rect x="183" y="215" width="7" height="10" rx="1.5" fill="none" stroke="#1FA97A" stroke-width="1.8"/>
-  <path d="M185,215 L185,211 L188,211 L188,215" fill="none" stroke="#1FA97A" stroke-width="1.5"/>
-  <text x="175" y="260" text-anchor="middle" font-size="16" font-weight="700" fill="#1FA97A">Hu&#233;sped</text>
-  <text x="175" y="282" text-anchor="middle" font-size="11.5" fill="#222222">Enlace de pre check-in</text>
-  <text x="175" y="300" text-anchor="middle" font-size="11.5" fill="#222222">Registra a sus acompa&#241;antes</text>
-  <text x="175" y="318" text-anchor="middle" font-size="11.5" fill="#222222">Indicaciones de acceso</text>
-
-  <!-- ================= ANFITRION ================= -->
-  <rect x="790" y="216" width="230" height="122" rx="10" fill="#FFFFFF" stroke="#155059" stroke-width="2"/>
-  <circle cx="905" cy="216" r="20" fill="#FFFFFF" stroke="#155059" stroke-width="2"/>
-  <circle cx="905" cy="210" r="5" fill="#155059"/>
-  <path d="M896,227 a 9 7 0 0 1 18 0 z" fill="#155059"/>
-  <path d="M905,217 L903,222 L905,227 L907,222 z" fill="#FFFFFF"/>
-  <text x="905" y="260" text-anchor="middle" font-size="16" font-weight="700" fill="#155059">Anfitri&#243;n</text>
-  <text x="905" y="282" text-anchor="middle" font-size="11.5" fill="#222222">Supervisa sin intervenir</text>
-  <text x="905" y="300" text-anchor="middle" font-size="11.5" fill="#222222">Correos + tarjetas de WhatsApp</text>
-  <text x="905" y="318" text-anchor="middle" font-size="11.5" fill="#5A5560">Reporte diario y alertas</text>
-
-  <!-- ================= CONSERJE ================= -->
-  <rect x="60" y="516" width="230" height="122" rx="10" fill="#FFFFFF" stroke="#FE4500" stroke-width="2"/>
-  <circle cx="175" cy="516" r="20" fill="#FFFFFF" stroke="#FE4500" stroke-width="2"/>
-  <circle cx="175" cy="511" r="5" fill="#FE4500"/>
-  <path d="M166,527 a 9 7 0 0 1 18 0 z" fill="#FE4500"/>
-  <path d="M168,507 a 7 5 0 0 1 14 0 L184,507 L166,507 z" fill="#FE4500"/>
-  <text x="175" y="560" text-anchor="middle" font-size="16" font-weight="700" fill="#FE4500">Conserje</text>
-  <text x="175" y="582" text-anchor="middle" font-size="11.5" fill="#222222">Tarjeta del d&#237;a con hu&#233;spedes</text>
-  <text x="175" y="600" text-anchor="middle" font-size="11.5" fill="#222222">Bot&#243;n &#8220;Registro llegadas&#8221;</text>
-  <text x="175" y="618" text-anchor="middle" font-size="11.5" fill="#5A5560">Marca llegada en su celular</text>
-
-  <!-- ================= LIMPIEZA ================= -->
-  <rect x="790" y="516" width="230" height="122" rx="10" fill="#FFFFFF" stroke="#1FA97A" stroke-width="2"/>
-  <circle cx="905" cy="516" r="20" fill="#FFFFFF" stroke="#1FA97A" stroke-width="2"/>
-  <circle cx="902" cy="511" r="5" fill="#1FA97A"/>
-  <path d="M893,527 a 9 7 0 0 1 18 0 z" fill="#1FA97A"/>
-  <rect x="913" y="516" width="6" height="9" rx="1" fill="none" stroke="#1FA97A" stroke-width="1.6"/>
-  <path d="M914,516 L914,512 L919,512 M919,511 L922,509" fill="none" stroke="#1FA97A" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="905" y="560" text-anchor="middle" font-size="16" font-weight="700" fill="#1FA97A">Limpieza</text>
-  <text x="905" y="582" text-anchor="middle" font-size="11.5" fill="#222222">Tarjeta con ventana disponible</text>
-  <text x="905" y="600" text-anchor="middle" font-size="11.5" fill="#222222">Bot&#243;n &#8220;Registrar Limpieza&#8221;</text>
-  <text x="905" y="618" text-anchor="middle" font-size="11.5" fill="#5A5560">Confirma con fotos de evidencia</text>
-
-  <!-- ================= NUMEROS DE SECUENCIA ================= -->
-  <g font-size="12" font-weight="700">
-    <circle cx="540" cy="232" r="13" fill="#FE4500"/><text x="540" y="236.5" text-anchor="middle" fill="#FFFFFF">1</text>
-    <circle cx="288" cy="300" r="13" fill="#1FA97A"/><text x="288" y="304.5" text-anchor="middle" fill="#FFFFFF">2</text>
-    <circle cx="318" cy="348" r="13" fill="#5A5560"/><text x="318" y="352.5" text-anchor="middle" fill="#FFFFFF">3</text>
-    <circle cx="296" cy="394" r="13" fill="#1FA97A"/><text x="296" y="398.5" text-anchor="middle" fill="#FFFFFF">4</text>
-    <circle cx="288" cy="474" r="13" fill="#FE4500"/><text x="288" y="478.5" text-anchor="middle" fill="#FFFFFF">5</text>
-    <circle cx="332" cy="506" r="13" fill="#5A5560"/><text x="332" y="510.5" text-anchor="middle" fill="#FFFFFF">6</text>
-    <circle cx="792" cy="474" r="13" fill="#1FA97A"/><text x="792" y="478.5" text-anchor="middle" fill="#FFFFFF">7</text>
-    <circle cx="748" cy="506" r="13" fill="#5A5560"/><text x="748" y="510.5" text-anchor="middle" fill="#FFFFFF">8</text>
-    <circle cx="790" cy="316" r="13" fill="#155059"/><text x="790" y="320.5" text-anchor="middle" fill="#FFFFFF">9</text>
-  </g>
-
-  <!-- ================= LEYENDA DE SECUENCIA ================= -->
-  <rect x="60" y="662" width="960" height="128" rx="10" fill="#FFFFFF" stroke="#EAE2D8" stroke-width="1.5"/>
-  <g font-size="11.5" fill="#222222">
-    <text x="80" y="688"><tspan font-weight="700" fill="#FE4500">1.</tspan> Nueva reserva: el sistema la detecta al instante</text>
-    <text x="80" y="708"><tspan font-weight="700" fill="#1FA97A">2.</tspan> WhatsApp al hu&#233;sped con su enlace de pre check-in</text>
-    <text x="80" y="728"><tspan font-weight="700" fill="#5A5560">3.</tspan> El hu&#233;sped registra a sus acompa&#241;antes y documentos</text>
-    <text x="80" y="748"><tspan font-weight="700" fill="#1FA97A">4.</tspan> Indicaciones de acceso enviadas antes de la llegada</text>
-    <text x="80" y="768"><tspan font-weight="700" fill="#FE4500">5.</tspan> D&#237;a de ingreso: tarjeta autom&#225;tica al conserje</text>
-    <text x="560" y="688"><tspan font-weight="700" fill="#5A5560">6.</tspan> El conserje marca las llegadas desde su celular</text>
-    <text x="560" y="708"><tspan font-weight="700" fill="#1FA97A">7.</tspan> Check-out: tarjeta autom&#225;tica al personal de limpieza</text>
-    <text x="560" y="728"><tspan font-weight="700" fill="#5A5560">8.</tspan> Limpieza confirma ejecuci&#243;n y sube fotos de evidencia</text>
-    <text x="560" y="748"><tspan font-weight="700" fill="#155059">9.</tspan> El anfitri&#243;n recibe reportes y alertas en tiempo real</text>
-  </g>
-</svg>
-
-    </div>
-    <div class="colab-nota">Desliza horizontalmente para ver el proceso completo &rarr;</div>
-  </div>
-
-  <!-- FUNCIONALIDADES -->
-  <div class="funciones">
-    <div class="kicker">Lo que hace por ti</div>
-    <h2>Ocho tareas que dejas de hacer a mano</h2>
-    <div class="fun-grid">
-      <div class="fun">
-        <div class="icono">📸</div>
-        <div>
-          <h3>Check-in digital con IA</h3>
-          <p>El huésped fotografía su documento y la IA <b>lee y llena los datos sola</b>. ¿Prefiere digitar? Con su DNI o carnet, <b>el nombre aparece al instante</b> desde RENIEC y Migraciones.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🛎️</div>
-        <div>
-          <h3>Registro de llegadas del conserje</h3>
-          <p>Tu conserje recibe la tarjeta del día por WhatsApp con el botón <b>&ldquo;Registrar llegadas&rdquo;</b>: un toque abre su página segura y marca quién llegó, desde su celular, <b>sin usuarios ni claves</b>.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🔄</div>
-        <div>
-          <h3>Sincronización automática con Airbnb</h3>
-          <p>Tus reservas <b>se importan solas</b> desde el calendario de Airbnb. Nuevas, cambios y cancelaciones, sin copiar nada a mano.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🤝</div>
-        <div>
-          <h3>Reservas directas, también</h3>
-          <p>¿Te reservan por WhatsApp o recomendación? Regístralas en segundos y conviven en <b>el mismo calendario</b> que las de Airbnb.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🧼</div>
-        <div>
-          <h3>Limpiezas con evidencia fotográfica</h3>
-          <p>Tu personal toca el botón <b>&ldquo;Registrar Limpieza&rdquo;</b> de su tarjeta de WhatsApp y documenta <b>cómo se encontró el depa, la limpieza, objetos olvidados y deterioros</b>, con fotos desde su celular.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">📬</div>
-        <div>
-          <h3>Reportes diarios a tu equipo</h3>
-          <p>Conserje, administrador y limpieza reciben su resumen del día <b>por WhatsApp y correo</b>, a la hora que elijas, con los check-ins y limpiezas de la jornada.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🔔</div>
-        <div>
-          <h3>Notificaciones automáticas por WhatsApp</h3>
-          <p>El huésped recibe <b>su enlace de check-in y las indicaciones de acceso</b> antes de llegar. Tú y tu equipo, avisos <b>al instante</b> cuando se completa un check-in o se cierra una limpieza.</p>
-        </div>
-      </div>
-      <div class="fun">
-        <div class="icono">🛡️</div>
-        <div>
-          <h3>Registro formal de huéspedes</h3>
-          <p>Historial completo con documento y foto: <b>respaldo ante incidentes</b> y orden para cumplir con el registro de huéspedes de tu hospedaje.</p>
-        </div>
+      <div class="collage reveal d2">
+        <img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="eager" onerror="this.style.display='none'">
+        <img src="/img/depa-2.jpeg" alt="Sala de departamento en alquiler temporal" loading="lazy" onerror="this.style.display='none'">
+        <img src="/img/depa-3.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.style.display='none'">
+        <img src="/img/depa-5.jpeg" alt="Sala de departamento en Lima" loading="lazy" onerror="this.style.display='none'">
+        <img src="/img/depa-4.jpeg" alt="Vista nocturna de departamento gestionado" loading="lazy" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
 
-  <!-- PASOS -->
-  <div class="pasos">
-    <div class="pasos-caja">
-      <div class="kicker" style="color:var(--ambar)">Así de simple</div>
-      <h2>Funcionando en 3 pasos</h2>
-      <div class="sub">Sin instalaciones, sin capacitaciones, sin tarjeta de crédito.</div>
-      <div class="pasos-grid">
-        <div class="paso">
-          <div class="num">1</div>
-          <h4>Conecta tu Airbnb</h4>
-          <p>Pega el enlace de tu calendario Airbnb <span class="mono">(iCal)</span> una sola vez. Tus reservas empiezan a llegar solas.</p>
-        </div>
-        <div class="paso">
-          <div class="num">2</div>
-          <h4>Envía el enlace al huésped</h4>
-          <p>Cada reserva genera su <span class="mono">enlace corto</span> de check-in. Lo mandas por WhatsApp y listo.</p>
-        </div>
-        <div class="paso">
-          <div class="num">3</div>
-          <h4>Todo queda registrado</h4>
-          <p>Datos, fotos, horas, limpiezas y reportes al equipo, <span class="mono">automático</span>, mientras tú haces otra cosa.</p>
-        </div>
+  <!-- TECNOLOGIA PROPIA -->
+  <div class="bloque">
+    <div class="tec-caja reveal">
+      <div class="kicker" style="color:var(--ambar)">Nuestro diferencial</div>
+      <h2 style="font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.02em">Operaci&#243;n potenciada con nuestra propia aplicaci&#243;n</h2>
+      <div class="sub">No administramos con cuadernos ni chats sueltos: desarrollamos Renta Familiar, una plataforma que automatiza la operaci&#243;n completa y te da visibilidad total de tu propiedad.</div>
+      <div class="tec-grid">
+        <div class="tec-item reveal d1"><b>Check-in digital con IA:</b> cada hu&#233;sped se registra con su documento antes de llegar.</div>
+        <div class="tec-item reveal d2"><b>Sincronizaci&#243;n autom&#225;tica</b> del calendario de Airbnb y reservas directas.</div>
+        <div class="tec-item reveal d3"><b>Conserje y limpieza coordinados por WhatsApp</b> con registro de llegadas y evidencia fotogr&#225;fica.</div>
+        <div class="tec-item reveal d4"><b>Reportes autom&#225;ticos:</b> sabes qui&#233;n lleg&#243;, c&#243;mo qued&#243; tu depa y c&#243;mo va tu rentabilidad.</div>
       </div>
     </div>
   </div>
 
-  <!-- PRECIO + CTA -->
+  <!-- MIGRACION: dolor -> solucion -->
+  <div class="bloque">
+    <div class="kicker reveal">&#191;Ya delegaste tu Airbnb?</div>
+    <h2 class="reveal d1">Si esto te suena, tu administrador te est&#225; costando dinero</h2>
+    <div class="mig-cab reveal d2"><div class="c1">Lo que vives hoy</div><div class="c2">Con Renta Familiar</div></div>
+    <div class="mig-fila reveal"><div class="mig-dolor">Liquidaciones tard&#237;as y sin sustento: no sabes cu&#225;nto produjo realmente tu departamento.</div><div class="mig-sol">Reportes autom&#225;ticos de ingresos y ocupaci&#243;n, con an&#225;lisis de desempe&#241;o peri&#243;dico y comprobante formal.</div></div>
+    <div class="mig-fila reveal d1"><div class="mig-dolor">No sabes si tu depa estuvo vac&#237;o&#8230; o alquilado sin reportarte.</div><div class="mig-sol">Cada hu&#233;sped queda registrado con su documento en el sistema: historial completo y verificable de cada estad&#237;a.</div></div>
+    <div class="mig-fila reveal d2"><div class="mig-dolor">Te enteras de los da&#241;os meses despu&#233;s, sin evidencia ni responsable.</div><div class="mig-sol">Evidencia fotogr&#225;fica de cada limpieza: c&#243;mo se encontr&#243;, c&#243;mo qued&#243;, deterioros y objetos olvidados, con fecha y registro.</div></div>
+    <div class="mig-fila reveal"><div class="mig-dolor">El administrador desaparece y terminas t&#250; respondiendo urgencias.</div><div class="mig-sol">Asistencia al hu&#233;sped 24/7 y comunicaci&#243;n automatizada: el sistema avisa, coordina y registra sin que nadie persiga a nadie.</div></div>
+    <div class="mig-fila reveal d1"><div class="mig-dolor">Sin contrato claro ni comprobantes: el riesgo tributario lo cargas t&#250;.</div><div class="mig-sol">Operaci&#243;n formal con factura y boleta, protocolos definidos y asesor&#237;a en obligaciones fiscales.</div></div>
+    <div class="mig-fila reveal d2"><div class="mig-dolor">Rese&#241;as cayendo y tarifas al ojo: tu anuncio pierde posiciones cada mes.</div><div class="mig-sol">Gesti&#243;n de opiniones, publicaciones optimizadas y tarifas ajustadas por demanda &#8212; operado por un Superhost permanente.</div></div>
+
+    <div class="kicker reveal" style="margin-top:26px">Migrar es simple</div>
+    <div class="mig-pasos">
+      <div class="mig-paso reveal"><span class="num">1</span><b>Evaluaci&#243;n sin costo.</b> Nos cuentas c&#243;mo opera hoy tu departamento y te mostramos su potencial real, sin compromiso. <a href="/simulacion" style="color:var(--coral);font-weight:600">Simula tu flujo aqu&#237; &#8594;</a></div>
+      <div class="mig-paso reveal d1"><span class="num">2</span><b>Transici&#243;n coordinada.</b> Organizamos contigo el cambio: anuncio, calendario, accesos y reservas en curso, sin dejar hu&#233;spedes colgados.</div>
+      <div class="mig-paso reveal d2"><span class="num">3</span><b>Resultados desde la primera semana.</b> Empiezas a recibir reportes autom&#225;ticos y evidencias de cada limpieza desde el d&#237;a uno.</div>
+    </div>
+  </div>
+
+  <!-- 9 SERVICIOS -->
+  <div class="bloque">
+    <div class="kicker reveal">Servicio integral</div>
+    <h2 class="reveal d1">Nueve frentes que cubrimos por ti</h2>
+    <div class="serv-grid">
+      <div class="serv reveal"><img class="serv-img" src="/img/1-habilitar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">1</span><b>Habilitaci&#243;n del departamento</b>Inspecci&#243;n del inmueble, documentaci&#243;n de caracter&#237;sticas y definici&#243;n de tarifas competitivas.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/2-publicar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">2</span><b>Publicaciones optimizadas</b>Descripciones claras, fotos profesionales y palabras clave que aumentan la visibilidad en las plataformas.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/3-reservas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">3</span><b>Reservas y disponibilidad</b>Calendario administrado, confirmaciones en tiempo real y sincronizaci&#243;n entre plataformas.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/4-asistencia.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">4</span><b>Asistencia al hu&#233;sped 24/7</b>Informaci&#243;n clara antes de la llegada, instrucciones de check-in y soporte durante la estad&#237;a.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/5-limpieza.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">5</span><b>Limpieza y mantenimiento</b>Personal coordinado con evidencia fotogr&#225;fica de cada limpieza y control de deterioros.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/6-tarifas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">6</span><b>Optimizaci&#243;n de tarifas</b>Precios ajustados por demanda, temporada y competencia para maximizar ingresos y ocupaci&#243;n.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/7-facturas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">7</span><b>Gestiones legales y fiscales</b>Operaci&#243;n conforme a la normativa, registro de la propiedad y asesor&#237;a en obligaciones tributarias.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/8-evaluar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">8</span><b>Gesti&#243;n de opiniones</b>Monitoreo y respuesta de rese&#241;as para cuidar la reputaci&#243;n y convertirla en m&#225;s reservas.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/9-desempenio.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">9</span><b>An&#225;lisis de desempe&#241;o</b>Informes peri&#243;dicos de ingresos, ocupaci&#243;n y feedback para optimizar la estrategia de tu propiedad.</div>
+    </div>
+  </div>
+
+  <!-- GALERIA -->
+  <div class="bloque">
+    <div class="kicker reveal">Nuestra cartera</div>
+    <h2 class="reveal d1">Departamentos que ya gestionamos en Lima</h2>
+    <div class="galeria">
+      <figure class="reveal"><img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d1"><img src="/img/depa-2.jpeg" alt="Departamento en alquiler temporal, Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d2"><img src="/img/depa-3.jpeg" alt="Departamento amoblado gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d3"><img src="/img/depa-4.jpeg" alt="Departamento corporativo en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d1"><img src="/img/depa-5.jpeg" alt="Departamento amoblado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d2"><img src="/img/depa-6.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal d3"><img src="/img/depa-7.jpeg" alt="Sala de departamento en gestion de alquiler" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal"><img src="/img/depa-8.jpeg" alt="Departamento de la cartera gestionada en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+    </div>
+  </div>
+
+  <!-- CTA -->
   <div class="precio">
-    <div class="tacha">S/ 99 al mes</div>
-    <div class="gratis">GRATIS</div>
-    <p class="honesto"><b>Estamos en etapa de lanzamiento</b> y buscamos anfitriones fundadores. Úsalo sin pagar, exprímelo con tus departamentos reales y ayúdanos a crear nuevas funcionalidades.</p>
-    <a class="cta-btn" href="https://wa.me/51998320401?text=Hola%2C%20quiero%20probar%20Renta%20Familiar%20gratis">💬 Quiero mi acceso gratis</a>
-    <div class="cta-sub">o escríbenos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> · Ingresa a <a href="https://checkin.rentafamiliar.com"><span class="mono">checkin.rentafamiliar.com</span></a></div>
-    <div><span class="cupos">⚡ Cupos limitados de la etapa gratuita</span></div>
+    <div class="kicker reveal" style="margin-bottom:6px">Conversemos</div>
+    <h2 class="reveal d1" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin-bottom:10px">&#191;Cu&#225;nto puede producir tu departamento?</h2>
+    <p class="honesto reveal d2">Cu&#233;ntanos d&#243;nde est&#225; tu propiedad y te damos una <b>evaluaci&#243;n sin costo</b> de su potencial de alquiler temporal.</p>
+    <a class="cta-btn reveal d3" href="https://wa.me/51998320401?text=Hola%2C%20tengo%20un%20departamento%20y%20quiero%20delegar%20su%20administraci%C3%B3n">&#128172; Quiero delegar mi departamento</a>
+    <div class="cta-sub reveal d4">o escr&#237;benos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> &#183; <a href="mailto:hostfamily.limaperu@gmail.com"><span class="mono">hostfamily.limaperu@gmail.com</span></a></div>
   </div>
 
   <!-- FOOTER -->
   <div class="pie">
-    <div><b>Renta Familiar</b> · Un producto de <a href="https://pragma-ti.com/">Pragma TI</a></div>
-    <div>Lima, Perú · <a href="/gestion">Gestión para propietarios</a> · <a href="https://rentafamiliar.com/">rentafamiliar.com</a></div>
+    <div><b>Renta Familiar</b> &#183; Un producto de <a href="https://pragma-ti.com/">Pragma TI</a></div>
+    <div>Lima, Per&#250; &#183; <a href="/simulacion">Simulaci&#243;n</a> &#183; <a href="/sistema">Nuestro sistema</a> &#183; <a href="/gestor-alquileres-temporales">Gestor de alquileres</a> &#183; <a href="/privacidad.html">Privacidad</a></div>
   </div>
 
 </div>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Revelado al hacer scroll
+  var revs = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    revs.forEach(function (el) { el.classList.add("visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revs.forEach(function (el) { io.observe(el); });
+  }
+
+  // Contadores animados (95, 2500)
+  function animarContador(el) {
+    var fin = parseInt(el.getAttribute("data-fin"), 10);
+    if (reduce) { el.textContent = fin.toLocaleString("es-PE"); return; }
+    var dur = 1400, t0 = null;
+    function paso(t) {
+      if (!t0) { t0 = t; }
+      var p = Math.min((t - t0) / dur, 1);
+      p = 1 - Math.pow(1 - p, 3); // suavizado
+      el.textContent = Math.round(fin * p).toLocaleString("es-PE");
+      if (p < 1) { requestAnimationFrame(paso); }
+    }
+    requestAnimationFrame(paso);
+  }
+  var conts = document.querySelectorAll(".contador");
+  if ("IntersectionObserver" in window && !reduce) {
+    var ioc = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { animarContador(e.target); ioc.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    conts.forEach(function (el) { ioc.observe(el); });
+  } else {
+    conts.forEach(animarContador);
+  }
+})();
+</script>
 </body>
 </html>
