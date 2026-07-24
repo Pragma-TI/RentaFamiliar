@@ -324,8 +324,27 @@
       <h3>Datos de tu departamento</h3>
       <div class="dos">
         <div class="campo">
+          <label for="ndepas">A delegar</label>
+          <select id="ndepas">
+            <option value="1" selected>1 departamento</option>
+            <option value="2">2 departamentos</option>
+            <option value="3">3 o m&#225;s</option>
+          </select>
+          <div class="ayuda">Define tu comisi&#243;n preferencial</div>
+        </div>
+        <div class="campo">
+          <label for="habitaciones">Habitaciones</label>
+          <select id="habitaciones">
+            <option value="50">1 habitaci&#243;n</option>
+            <option value="65">2 habitaciones</option>
+            <option value="80" selected>3 o m&#225;s</option>
+          </select>
+        </div>
+      </div>
+      <div class="dos">
+        <div class="campo">
           <label for="tarifa">Tarifa promedio por noche (S/)</label>
-          <input type="number" id="tarifa" value="150" min="30" step="5">
+          <input type="number" id="tarifa" value="200" min="30" step="5">
         </div>
         <div class="campo">
           <label for="ocupacion">Ocupaci&#243;n mensual (%)</label>
@@ -336,47 +355,28 @@
       <div class="dos">
         <div class="campo">
           <label for="estadia">Estad&#237;a promedio (noches)</label>
-          <input type="number" id="estadia" value="3" min="1" step="1">
+          <input type="number" id="estadia" value="2" min="1" step="1">
         </div>
-        <div class="campo">
-          <label for="habitaciones">Habitaciones</label>
-          <select id="habitaciones">
-            <option value="60">1 habitaci&#243;n</option>
-            <option value="80" selected>2 habitaciones</option>
-            <option value="110">3 o m&#225;s</option>
-          </select>
-        </div>
-      </div>
-      <div class="dos">
         <div class="campo">
           <label for="limpieza">Limpieza por estad&#237;a (S/)</label>
           <input type="number" id="limpieza" value="80" min="0" step="5">
-          <div class="ayuda">Referencial Lima; aj&#250;stalo a tu realidad</div>
+          <div class="ayuda">3 hab: S/80 &#183; 2 hab: S/65 &#183; 1 hab: S/50</div>
         </div>
+      </div>
+      <div class="dos">
         <div class="campo">
           <label for="gastos">Gastos fijos del depa (S/ mes)</label>
           <input type="number" id="gastos" value="250" min="0" step="10">
           <div class="ayuda">Luz, agua, internet, insumos</div>
         </div>
-      </div>
-      <div class="dos">
-        <div class="campo">
-          <label for="ndepas">Departamentos a delegar</label>
-          <select id="ndepas">
-            <option value="1" selected>1 departamento</option>
-            <option value="2">2 departamentos</option>
-            <option value="3">3 o m&#225;s</option>
-          </select>
-          <div class="ayuda">Define tu comisi&#243;n preferencial</div>
-        </div>
         <div class="campo">
           <label for="comision">Comisi&#243;n Renta Familiar (%)</label>
-          <input type="number" id="comision" value="20" min="0" max="40" step="1">
-          <div class="ayuda">1 depa: 20% &#183; 2: 18% &#183; 3+: 15%</div>
+          <input type="number" id="comision" value="18" min="0" max="40" step="1">
+          <div class="ayuda">1 depa: 18% &#183; 2: 16% &#183; 3+: 15%</div>
         </div>
       </div>
       <div class="campo conmut">
-        <input type="checkbox" id="huespedpaga" checked>
+        <input type="checkbox" id="huespedpaga">
         <label for="huespedpaga" style="margin:0">La limpieza la paga el hu&#233;sped (est&#225;ndar Airbnb)</label>
       </div>
     </div>
@@ -387,7 +387,6 @@
         <tr class="grupo"><td>Ingresos</td><td></td></tr>
         <tr><td id="l-noches">Noches ocupadas</td><td id="v-noches">0</td></tr>
         <tr><td>Ingreso por alojamiento</td><td id="v-alojamiento">S/ 0</td></tr>
-        <tr id="f-limphuesped"><td>Tarifas de limpieza cobradas al hu&#233;sped</td><td id="v-limphuesped">S/ 0</td></tr>
         <tr class="grupo"><td>Egresos</td><td></td></tr>
         <tr class="resta"><td>Comisi&#243;n plataforma Airbnb (3%)</td><td id="v-airbnb">S/ 0</td></tr>
         <tr class="resta"><td id="l-rf">Comisi&#243;n Renta Familiar</td><td id="v-rf">S/ 0</td></tr>
@@ -396,8 +395,8 @@
       </table>
       <div class="neto"><span class="eti">Neto mensual para ti (por depa)</span><span class="val pos" id="v-neto">S/ 0</span></div>
       <div class="anual">
-        <div class="caja"><div class="n" id="v-anual">S/ 0</div><div class="t">Neto anual por departamento</div></div>
-        <div class="caja"><div class="n" id="v-total">S/ 0</div><div class="t" id="l-total">Neto mensual del portafolio</div></div>
+        <div class="caja"><div class="n" id="v-total">S/ 0</div><div class="t" id="l-total">Neto mensual del portafolio (1 depa)</div></div>
+        <div class="caja"><div class="n" id="v-anual">S/ 0</div><div class="t" id="l-anual">Neto anual del portafolio (1 depa)</div></div>
       </div>
       <a class="cta-btn" style="margin-top:18px;display:inline-block" href="https://wa.me/51998320401?text=Hola%2C%20simul%C3%A9%20el%20flujo%20de%20mi%20departamento%20y%20quiero%20una%20evaluaci%C3%B3n%20real" id="cta-sim">&#128172; Quiero mi evaluaci&#243;n real sin costo</a>
     </div>
@@ -419,7 +418,7 @@
   var fmt = function (n) {
     return "S/ " + Math.round(n).toLocaleString("es-PE");
   };
-  var comisionSugerida = { "1": 20, "2": 18, "3": 15 };
+  var comisionSugerida = { "1": 18, "2": 16, "3": 15 };
 
   function calcular() {
     var tarifa    = parseFloat($("tarifa").value)    || 0;
@@ -434,38 +433,37 @@
     var noches      = 30 * ocupacion;
     var estadias    = noches / estadia;
     var alojamiento = noches * tarifa;
-    var limpTotal   = estadias * limpieza;
-    var limpHuesped = pagaHuesped ? limpTotal : 0;
+    // Limpieza: costo del propietario SOLO si no la cubre el huesped
+    var limpCosto   = pagaHuesped ? 0 : estadias * limpieza;
 
-    // Airbnb 3% sobre subtotal (alojamiento + limpieza cobrada al huesped)
-    var feeAirbnb = (alojamiento + limpHuesped) * 0.03;
+    // Airbnb 3% sobre el alojamiento
+    var feeAirbnb = alojamiento * 0.03;
     // Comision RF sobre ingreso neto de plataforma, sin tarifa de limpieza
-    var baseRF = alojamiento - (alojamiento * 0.03);
-    var feeRF  = baseRF * comision;
+    var feeRF  = (alojamiento - feeAirbnb) * comision;
 
-    var neto = alojamiento + limpHuesped - feeAirbnb - feeRF - limpTotal - gastos;
+    var neto = alojamiento - feeAirbnb - feeRF - limpCosto - gastos;
 
     $("v-noches").textContent      = Math.round(noches) + " noches (" + Math.round(estadias) + " estadias)";
     $("v-alojamiento").textContent = fmt(alojamiento);
-    $("v-limphuesped").textContent = fmt(limpHuesped);
-    $("f-limphuesped").style.display = pagaHuesped ? "" : "none";
     $("v-airbnb").textContent      = "- " + fmt(feeAirbnb);
     $("l-rf").textContent          = "Comision Renta Familiar (" + Math.round(comision * 100) + "%)";
     $("v-rf").textContent          = "- " + fmt(feeRF);
-    $("l-limpiezas").textContent   = "Limpiezas (" + Math.round(estadias) + " x " + fmt(limpieza).replace("S/ ", "S/") + ")" + (pagaHuesped ? " - cubiertas por el huesped" : "");
-    $("v-limpiezas").textContent   = "- " + fmt(limpTotal);
+    $("l-limpiezas").textContent   = pagaHuesped
+        ? "Limpiezas: cubiertas por el huesped (estandar Airbnb)"
+        : "Limpiezas (" + Math.round(estadias) + " x " + fmt(limpieza).replace("S/ ", "S/") + ")";
+    $("v-limpiezas").textContent   = "- " + fmt(limpCosto);
     $("v-gastos").textContent      = "- " + fmt(gastos);
     $("v-neto").textContent        = fmt(neto);
     $("v-neto").className          = "val " + (neto >= 0 ? "pos" : "");
-    $("v-anual").textContent       = fmt(neto * 12);
+    var etiDepas = ndepas > 1 ? ndepas + " depas" : "1 depa";
     $("v-total").textContent       = fmt(neto * ndepas);
-    $("l-total").textContent       = ndepas > 1
-        ? "Neto mensual del portafolio (" + ndepas + " depas)"
-        : "Neto mensual del portafolio";
+    $("l-total").textContent       = "Neto mensual del portafolio (" + etiDepas + ")";
+    $("v-anual").textContent       = fmt(neto * 12 * ndepas);
+    $("l-anual").textContent       = "Neto anual del portafolio (" + etiDepas + ")";
   }
 
   $("ndepas").addEventListener("change", function () {
-    $("comision").value = comisionSugerida[this.value] || 20;
+    $("comision").value = comisionSugerida[this.value] || 18;
     calcular();
   });
   $("habitaciones").addEventListener("change", function () {
