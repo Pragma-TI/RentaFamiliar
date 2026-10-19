@@ -432,13 +432,16 @@
   .topbar{gap:14px;align-items:center}
   /* el enlace de la derecha se parte en dos lineas a proposito:
      pregunta arriba, llamada a la accion abajo */
-  .topbar > div:last-child{text-align:right;flex:1 1 auto;min-width:0}
+  /* el contenedor de la derecha es flex: alinear el item, no solo el texto */
+  .topbar > div:last-child{
+    text-align:right;flex:1 1 auto;min-width:0;justify-content:flex-end;
+  }
   .topbar-nota{font-size:13px;font-weight:600;color:var(--gris);
                text-decoration:none;line-height:1.45;display:inline-block}
   .topbar-nota span{display:block;color:var(--coral)}
   @media(max-width:720px){
     .topbar{flex-wrap:wrap;row-gap:8px}
-    .topbar > div:last-child{text-align:left;flex-basis:100%}
+    .topbar > div:last-child{text-align:left;flex-basis:100%;justify-content:flex-start}
     .topbar-nota{font-size:12.5px}
     .logo-img{height:30px}
   }
