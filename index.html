@@ -421,6 +421,28 @@
     .galeria img{height:150px}
   }
 
+  /* ============ ISOTIPO EN LA BARRA SUPERIOR (agregado) ============ */
+  .logo-enlace{
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;color:inherit;
+  }
+  .logo-img{height:34px;width:auto;display:block;flex:0 0 auto}
+  .logo-enlace span{white-space:nowrap}
+  .logo{flex:0 0 auto}
+  .topbar{gap:14px;align-items:center}
+  /* el enlace de la derecha se parte en dos lineas a proposito:
+     pregunta arriba, llamada a la accion abajo */
+  .topbar > div:last-child{text-align:right;flex:1 1 auto;min-width:0}
+  .topbar-nota{font-size:13px;font-weight:600;color:var(--gris);
+               text-decoration:none;line-height:1.45;display:inline-block}
+  .topbar-nota span{display:block;color:var(--coral)}
+  @media(max-width:720px){
+    .topbar{flex-wrap:wrap;row-gap:8px}
+    .topbar > div:last-child{text-align:left;flex-basis:100%}
+    .topbar-nota{font-size:12.5px}
+    .logo-img{height:30px}
+  }
+
   /* ============ BOTON SECUNDARIO (agregado) ============ */
   .btn-fila{margin-top:16px}
   .btn-sec{
@@ -514,9 +536,9 @@
 
   <!-- BARRA SUPERIOR -->
   <div class="topbar">
-    <div class="logo"><a href="/" style="text-decoration:none;color:inherit">Renta <em>Familiar</em></a></div>
+    <div class="logo"><a href="/" class="logo-enlace"><img class="logo-img" src="/isotipo.png" alt="" width="115" height="95"><span>Renta <em>Familiar</em></span></a></div>
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <a href="/sistema" style="font-size:13px;font-weight:600;color:var(--gris);text-decoration:none">&#191;Prefieres administrar t&#250;? <span style="color:var(--coral)">Conoce nuestro sistema &#8594;</span></a>
+      <a href="/sistema" class="topbar-nota">&#191;Prefieres administrar t&#250; mismo? <span>Conoce nuestro sistema automatizado Check in Digital&#160;&#8594;</span></a>
     </div>
   </div>
 
