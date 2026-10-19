@@ -420,6 +420,91 @@
     .galeria{grid-template-columns:repeat(2,1fr)}
     .galeria img{height:150px}
   }
+
+  /* ============ BOTON SECUNDARIO (agregado) ============ */
+  .btn-fila{margin-top:16px}
+  .btn-sec{
+    display:inline-block;text-decoration:none;
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:14.5px;
+    color:var(--tinta);background:transparent;
+    border:1.5px solid var(--tinta);border-radius:12px;
+    padding:12px 24px;
+    transition:background .15s ease,color .15s ease,transform .15s ease;
+  }
+  .btn-sec:hover{background:var(--tinta);color:#fff;transform:translateY(-2px)}
+  /* sobre fondo oscuro: texto blanco, borde coral */
+  .btn-sec-claro{color:#fff;border-color:var(--coral)}
+  .btn-sec-claro:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+  .btn-sec-blanco{color:#fff;border-color:#fff}
+  .btn-sec-blanco:hover{background:#fff;color:var(--tinta)}
+
+  /* ============ PIE: admitir salto con un enlace mas (agregado) ============ */
+  .pie{flex-wrap:wrap;gap:6px 18px}
+  @media(max-width:640px){
+    .pie{flex-direction:column;align-items:flex-start;gap:8px}
+  }
+
+  /* ============ BANDA DE CONTACTO DE CIERRE (agregado) ============ */
+  .contacto{
+    background:
+      radial-gradient(700px 320px at 15% -20%, rgba(254,69,0,.26), transparent 62%),
+      var(--tinta);
+    color:#fff;padding:42px 40px 46px;
+  }
+  .contacto .rotulo{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ambar);
+    margin-bottom:14px;
+  }
+  .contacto h2{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:25px;
+    letter-spacing:-.02em;margin-bottom:8px;color:#fff;
+  }
+  .contacto p{
+    font-size:15px;line-height:1.55;color:#C9E2E0;max-width:52ch;margin-bottom:22px;
+  }
+  .contacto-datos{display:flex;gap:28px;flex-wrap:wrap}
+  .dato{display:flex;flex-direction:column;gap:3px}
+  .dato .et{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:#7FB3AE;
+  }
+  .dato a{
+    font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;
+    color:#fff;text-decoration:none;
+    border-bottom:1.5px solid var(--coral);padding-bottom:2px;
+  }
+  .dato a:hover{color:var(--ambar);border-bottom-color:var(--ambar)}
+
+  /* ============ HERO DE CAMPANA (pagina /migrar) ============ */
+  .hero-camp{
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(254,69,0,.30), transparent 60%),
+      radial-gradient(600px 380px at -10% 110%, rgba(245,166,35,.14), transparent 60%),
+      var(--tinta);
+    color:#fff;padding:52px 40px 46px;
+  }
+  .hero-camp .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ambar);
+    margin-bottom:16px;
+  }
+  .hero-camp h1{
+    font-family:'Archivo Black','Archivo',sans-serif;
+    font-size:42px;line-height:1.06;letter-spacing:-.015em;margin-bottom:16px;
+  }
+  .hero-camp h1 span{color:var(--coral)}
+  .hero-camp .baja{font-size:16.5px;line-height:1.55;color:#C9E2E0;max-width:48ch}
+
+  @media(max-width:700px){
+    .contacto{padding:34px 24px 38px}
+    .contacto h2{font-size:21px}
+    .contacto-datos{gap:18px}
+    .dato a{font-size:14.5px}
+    .hero-camp{padding:38px 24px 34px}
+    .hero-camp h1{font-size:30px}
+    .btn-sec{font-size:13.5px;padding:11px 20px}
+  }
 </style>
 </head>
 <body>
@@ -436,7 +521,6 @@
   <!-- HERO CON COLLAGE -->
   <div class="hero-g">
     <div>
-      <div class="eyebrow reveal">Gesti&#243;n de alquileres temporales &#183; Lima, Per&#250;</div>
       <h1 class="reveal d1">Tu departamento produce.<br>T&#250; <span>no te ocupas de nada</span>.</h1>
       <p class="baja reveal d2">Delega la administraci&#243;n de tu departamento para alquiler temporal vacacional y corporativo: nosotros lo habilitamos, lo publicamos, atendemos a cada hu&#233;sped y te reportamos los resultados. Con procedimientos probados y <b>tecnolog&#237;a propia que automatiza toda la operaci&#243;n</b>.</p>
       <div class="cifras">
@@ -466,58 +550,6 @@
     </div>
   </div>
 
-  <!-- TECNOLOGIA PROPIA -->
-  <div class="bloque">
-    <div class="tec-caja reveal">
-      <div class="kicker" style="color:var(--ambar)">Nuestro diferencial</div>
-      <h2 style="font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.02em">Operaci&#243;n potenciada con nuestra propia aplicaci&#243;n</h2>
-      <div class="sub">No administramos con cuadernos ni chats sueltos: desarrollamos Renta Familiar, una plataforma que automatiza la operaci&#243;n completa y te da visibilidad total de tu propiedad.</div>
-      <div class="tec-grid">
-        <div class="tec-item reveal d1"><b>Check-in digital con IA:</b> cada hu&#233;sped se registra con su documento antes de llegar.</div>
-        <div class="tec-item reveal d2"><b>Sincronizaci&#243;n autom&#225;tica</b> del calendario de Airbnb y reservas directas.</div>
-        <div class="tec-item reveal d3"><b>Conserje y limpieza coordinados por WhatsApp</b> con registro de llegadas y evidencia fotogr&#225;fica.</div>
-        <div class="tec-item reveal d4"><b>Reportes autom&#225;ticos:</b> sabes qui&#233;n lleg&#243;, c&#243;mo qued&#243; tu depa y c&#243;mo va tu rentabilidad.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MIGRACION: dolor -> solucion -->
-  <div class="bloque">
-    <div class="kicker reveal">&#191;Ya delegaste tu Airbnb?</div>
-    <h2 class="reveal d1">Si esto te suena, tu administrador te est&#225; costando dinero</h2>
-    <div class="mig-cab reveal d2"><div class="c1">Lo que vives hoy</div><div class="c2">Con Renta Familiar</div></div>
-    <div class="mig-fila reveal"><div class="mig-dolor">Liquidaciones tard&#237;as y sin sustento: no sabes cu&#225;nto produjo realmente tu departamento.</div><div class="mig-sol">Reportes autom&#225;ticos de ingresos y ocupaci&#243;n, con an&#225;lisis de desempe&#241;o peri&#243;dico y comprobante formal.</div></div>
-    <div class="mig-fila reveal d1"><div class="mig-dolor">No sabes si tu depa estuvo vac&#237;o&#8230; o alquilado sin reportarte.</div><div class="mig-sol">Cada hu&#233;sped queda registrado con su documento en el sistema: historial completo y verificable de cada estad&#237;a.</div></div>
-    <div class="mig-fila reveal d2"><div class="mig-dolor">Te enteras de los da&#241;os meses despu&#233;s, sin evidencia ni responsable.</div><div class="mig-sol">Evidencia fotogr&#225;fica de cada limpieza: c&#243;mo se encontr&#243;, c&#243;mo qued&#243;, deterioros y objetos olvidados, con fecha y registro.</div></div>
-    <div class="mig-fila reveal"><div class="mig-dolor">El administrador desaparece y terminas t&#250; respondiendo urgencias.</div><div class="mig-sol">Asistencia al hu&#233;sped 24/7 y comunicaci&#243;n automatizada: el sistema avisa, coordina y registra sin que nadie persiga a nadie.</div></div>
-    <div class="mig-fila reveal d1"><div class="mig-dolor">Sin contrato claro ni comprobantes: el riesgo tributario lo cargas t&#250;.</div><div class="mig-sol">Operaci&#243;n formal con factura y boleta, protocolos definidos y asesor&#237;a en obligaciones fiscales.</div></div>
-    <div class="mig-fila reveal d2"><div class="mig-dolor">Rese&#241;as cayendo y tarifas al ojo: tu anuncio pierde posiciones cada mes.</div><div class="mig-sol">Gesti&#243;n de opiniones, publicaciones optimizadas y tarifas ajustadas por demanda &#8212; operado por un Superhost permanente.</div></div>
-
-    <div class="kicker reveal" style="margin-top:26px">Migrar es simple</div>
-    <div class="mig-pasos">
-      <div class="mig-paso reveal"><span class="num">1</span><b>Evaluaci&#243;n sin costo.</b> Nos cuentas c&#243;mo opera hoy tu departamento y te mostramos su potencial real, sin compromiso. <a href="/simulacion" style="color:var(--coral);font-weight:600">Simula tu flujo aqu&#237; &#8594;</a></div>
-      <div class="mig-paso reveal d1"><span class="num">2</span><b>Transici&#243;n coordinada.</b> Organizamos contigo el cambio: anuncio, calendario, accesos y reservas en curso, sin dejar hu&#233;spedes colgados.</div>
-      <div class="mig-paso reveal d2"><span class="num">3</span><b>Resultados desde la primera semana.</b> Empiezas a recibir reportes autom&#225;ticos y evidencias de cada limpieza desde el d&#237;a uno.</div>
-    </div>
-  </div>
-
-  <!-- 9 SERVICIOS -->
-  <div class="bloque">
-    <div class="kicker reveal">Servicio integral</div>
-    <h2 class="reveal d1">Nueve frentes que cubrimos por ti</h2>
-    <div class="serv-grid">
-      <div class="serv reveal"><img class="serv-img" src="/img/1-habilitar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">1</span><b>Habilitaci&#243;n del departamento</b>Inspecci&#243;n del inmueble, documentaci&#243;n de caracter&#237;sticas y definici&#243;n de tarifas competitivas.</div>
-      <div class="serv reveal d1"><img class="serv-img" src="/img/2-publicar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">2</span><b>Publicaciones optimizadas</b>Descripciones claras, fotos profesionales y palabras clave que aumentan la visibilidad en las plataformas.</div>
-      <div class="serv reveal d2"><img class="serv-img" src="/img/3-reservas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">3</span><b>Reservas y disponibilidad</b>Calendario administrado, confirmaciones en tiempo real y sincronizaci&#243;n entre plataformas.</div>
-      <div class="serv reveal"><img class="serv-img" src="/img/4-asistencia.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">4</span><b>Asistencia al hu&#233;sped 24/7</b>Informaci&#243;n clara antes de la llegada, instrucciones de check-in y soporte durante la estad&#237;a.</div>
-      <div class="serv reveal d1"><img class="serv-img" src="/img/5-limpieza.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">5</span><b>Limpieza y mantenimiento</b>Personal coordinado con evidencia fotogr&#225;fica de cada limpieza y control de deterioros.</div>
-      <div class="serv reveal d2"><img class="serv-img" src="/img/6-tarifas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">6</span><b>Optimizaci&#243;n de tarifas</b>Precios ajustados por demanda, temporada y competencia para maximizar ingresos y ocupaci&#243;n.</div>
-      <div class="serv reveal"><img class="serv-img" src="/img/7-facturas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">7</span><b>Gestiones legales y fiscales</b>Operaci&#243;n conforme a la normativa, registro de la propiedad y asesor&#237;a en obligaciones tributarias.</div>
-      <div class="serv reveal d1"><img class="serv-img" src="/img/8-evaluar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">8</span><b>Gesti&#243;n de opiniones</b>Monitoreo y respuesta de rese&#241;as para cuidar la reputaci&#243;n y convertirla en m&#225;s reservas.</div>
-      <div class="serv reveal d2"><img class="serv-img" src="/img/9-desempenio.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">9</span><b>An&#225;lisis de desempe&#241;o</b>Informes peri&#243;dicos de ingresos, ocupaci&#243;n y feedback para optimizar la estrategia de tu propiedad.</div>
-    </div>
-  </div>
-
   <!-- GALERIA -->
   <div class="bloque">
     <div class="kicker reveal">Nuestra cartera</div>
@@ -540,15 +572,66 @@
     <h2 class="reveal d1" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin-bottom:10px">&#191;Cu&#225;nto puede producir tu departamento?</h2>
     <p class="honesto reveal d2">Cu&#233;ntanos d&#243;nde est&#225; tu propiedad y te damos una <b>evaluaci&#243;n sin costo</b> de su potencial de alquiler temporal.</p>
     <a class="cta-btn reveal d3" href="https://wa.me/51998320401?text=Hola%2C%20tengo%20un%20departamento%20y%20quiero%20delegar%20su%20administraci%C3%B3n">&#128172; Quiero delegar mi departamento</a>
+    <div class="btn-fila reveal d3"><a class="btn-sec" href="/simulacion">Calcula tu flujo en el simulador &#8594;</a></div>
     <div class="cta-sub reveal d4">o escr&#237;benos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> &#183; <a href="mailto:hostfamily.limaperu@gmail.com"><span class="mono">hostfamily.limaperu@gmail.com</span></a></div>
+  </div>
+
+  <!-- TECNOLOGIA PROPIA -->
+  <div class="bloque">
+    <div class="tec-caja reveal">
+      <div class="kicker" style="color:var(--ambar)">Nuestro diferencial</div>
+      <h2 style="font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.02em">Operaci&#243;n potenciada con nuestra propia aplicaci&#243;n</h2>
+      <div class="sub">No administramos con cuadernos ni chats sueltos: desarrollamos Renta Familiar, una plataforma que automatiza la operaci&#243;n completa y te da visibilidad total de tu propiedad.</div>
+      <div class="tec-grid">
+        <div class="tec-item reveal d1"><b>Check-in digital con IA:</b> cada hu&#233;sped se registra con su documento antes de llegar.</div>
+        <div class="tec-item reveal d2"><b>Sincronizaci&#243;n autom&#225;tica</b> del calendario de Airbnb y reservas directas.</div>
+        <div class="tec-item reveal d3"><b>Conserje y limpieza coordinados por WhatsApp</b> con registro de llegadas y evidencia fotogr&#225;fica.</div>
+        <div class="tec-item reveal d4"><b>Reportes autom&#225;ticos:</b> sabes qui&#233;n lleg&#243;, c&#243;mo qued&#243; tu depa y c&#243;mo va tu rentabilidad.</div>
+      </div>
+      <div class="btn-fila reveal d4"><a class="btn-sec btn-sec-claro" href="/sistema">Conoce la aplicaci&#243;n por dentro &#8594;</a></div>
+    </div>
+  </div>
+
+  <!-- 9 SERVICIOS -->
+  <div class="bloque">
+    <div class="kicker reveal">Servicio integral</div>
+    <h2 class="reveal d1">Nueve frentes que cubrimos por ti</h2>
+    <div class="serv-grid">
+      <div class="serv reveal"><img class="serv-img" src="/img/1-habilitar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">1</span><b>Habilitaci&#243;n del departamento</b>Inspecci&#243;n del inmueble, documentaci&#243;n de caracter&#237;sticas y definici&#243;n de tarifas competitivas.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/2-publicar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">2</span><b>Publicaciones optimizadas</b>Descripciones claras, fotos profesionales y palabras clave que aumentan la visibilidad en las plataformas.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/3-reservas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">3</span><b>Reservas y disponibilidad</b>Calendario administrado, confirmaciones en tiempo real y sincronizaci&#243;n entre plataformas.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/4-asistencia.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">4</span><b>Asistencia al hu&#233;sped 24/7</b>Informaci&#243;n clara antes de la llegada, instrucciones de check-in y soporte durante la estad&#237;a.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/5-limpieza.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">5</span><b>Limpieza y mantenimiento</b>Personal coordinado con evidencia fotogr&#225;fica de cada limpieza y control de deterioros.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/6-tarifas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">6</span><b>Optimizaci&#243;n de tarifas</b>Precios ajustados por demanda, temporada y competencia para maximizar ingresos y ocupaci&#243;n.</div>
+      <div class="serv reveal"><img class="serv-img" src="/img/7-facturas.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">7</span><b>Gestiones legales y fiscales</b>Operaci&#243;n conforme a la normativa, registro de la propiedad y asesor&#237;a en obligaciones tributarias.</div>
+      <div class="serv reveal d1"><img class="serv-img" src="/img/8-evaluar.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">8</span><b>Gesti&#243;n de opiniones</b>Monitoreo y respuesta de rese&#241;as para cuidar la reputaci&#243;n y convertirla en m&#225;s reservas.</div>
+      <div class="serv reveal d2"><img class="serv-img" src="/img/9-desempenio.png" alt="" loading="lazy" onerror="this.style.display='none'"><span class="num">9</span><b>An&#225;lisis de desempe&#241;o</b>Informes peri&#243;dicos de ingresos, ocupaci&#243;n y feedback para optimizar la estrategia de tu propiedad.</div>
+    </div>
+  </div>
+
+  <!-- 5. CONTACTO / IDENTIDAD -->
+  <div class="contacto">
+    <div class="rotulo reveal">Gesti&#243;n de alquileres temporales &#183; Lima, Per&#250;</div>
+    <h2 class="reveal d1">Hablemos de tu departamento</h2>
+    <p class="reveal d2">Atendemos propietarios en Lima que quieren rentabilizar su inmueble en
+      alquiler temporal vacacional y corporativo, sin ocuparse de la operaci&#243;n.</p>
+    <div class="contacto-datos">
+      <div class="dato reveal d3">
+        <span class="et">WhatsApp</span>
+        <a href="https://wa.me/51998320401">+51 998 320 401</a>
+      </div>
+      <div class="dato reveal d4">
+        <span class="et">Correo</span>
+        <a href="mailto:hostfamily.limaperu@gmail.com">hostfamily.limaperu@gmail.com</a>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
   <div class="pie">
     <div><b>Renta Familiar</b> &#183; Un producto de <a href="https://pragma-ti.com/">Pragma TI</a></div>
-    <div>Lima, Per&#250; &#183; <a href="/simulacion">Simulaci&#243;n</a> &#183; <a href="/sistema">Nuestro sistema</a> &#183; <a href="/gestor-alquileres-temporales">Gestor de alquileres</a> &#183; <a href="/privacidad.html">Privacidad</a></div>
+    <div>Lima, Per&#250; &#183; <a href="/simulacion">Simulaci&#243;n</a> &#183; <a href="/sistema">Nuestro sistema</a> &#183; <a href="/migrar">Migrar tu Airbnb</a> &#183; <a href="/gestor-alquileres-temporales">Gestor de alquileres</a> &#183; <a href="/privacidad.html">Privacidad</a></div>
   </div>
-
 </div>
 
 <script>
