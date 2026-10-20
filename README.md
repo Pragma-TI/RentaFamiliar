@@ -53,8 +53,8 @@ su código (ej. `https://rentafamiliar.com/migrar?o=ga`).
 
 | Código | Canal | Campaña / uso |
 |---|---|---|
-| `ga` | Google Ads | _(definir)_ |
-| `gb` | Google Ads | _(definir)_ |
+| `ga` | Google Ads | Campaña *RF - Búsqueda Lima*, grupo *Administración Airbnb* → `/?o=ga` |
+| `gb` | Google Ads | Campaña *RF - Búsqueda Lima*, grupo *Migrar administrador* → `/migrar?o=gb` |
 | `gc` | Google Ads | _(definir)_ |
 | `gd` | Google Ads | _(definir)_ |
 | `mt` | Meta (Facebook / Instagram) | _(definir)_ |
