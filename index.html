@@ -421,6 +421,33 @@
     .galeria img{height:150px}
   }
 
+  /* ====== CARTERA: alternancia suave entre las dos tandas (agregado) ======
+     Ciclo de 32 s: ~13,5 s cada foto y 2,5 s de fundido. La segunda foto va
+     encima de la primera, asi que si aun no carga se sigue viendo la de abajo. */
+  .galeria figure{position:relative}
+  .galeria figure img.alt{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    opacity:0;will-change:opacity;
+    animation:rf-alterna 32s ease-in-out infinite;
+  }
+  @keyframes rf-alterna{
+    0%,42%  {opacity:0}
+    50%,92% {opacity:1}
+    100%    {opacity:0}
+  }
+  /* desfase: ninguna celda cambia junto a su vecina */
+  .galeria figure:nth-child(1) img.alt{animation-delay:0s}
+  .galeria figure:nth-child(2) img.alt{animation-delay:-16s}
+  .galeria figure:nth-child(3) img.alt{animation-delay:-8s}
+  .galeria figure:nth-child(4) img.alt{animation-delay:-24s}
+  .galeria figure:nth-child(5) img.alt{animation-delay:-4s}
+  .galeria figure:nth-child(6) img.alt{animation-delay:-20s}
+  .galeria figure:nth-child(7) img.alt{animation-delay:-12s}
+  .galeria figure:nth-child(8) img.alt{animation-delay:-28s}
+  @media (prefers-reduced-motion: reduce){
+    .galeria figure img.alt{animation:none;opacity:0}
+  }
+
   /* ============ ISOTIPO EN LA BARRA SUPERIOR (agregado) ============ */
   .logo-enlace{
     display:flex;align-items:center;gap:10px;
@@ -550,14 +577,14 @@
     <div class="kicker reveal">Nuestra cartera</div>
     <h2 class="reveal d1">Departamentos que ya gestionamos en Lima</h2>
     <div class="galeria">
-      <figure class="reveal"><img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal d1"><img src="/img/depa-2.jpeg" alt="Departamento en alquiler temporal, Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal d2"><img src="/img/depa-3.jpeg" alt="Departamento amoblado gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal d3"><img src="/img/depa-4.jpeg" alt="Departamento corporativo en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal d1"><img src="/img/depa-5.jpeg" alt="Departamento amoblado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal d2"><img src="/img/depa-6.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal d3"><img src="/img/depa-7.jpeg" alt="Sala de departamento en gestion de alquiler" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
-      <figure class="reveal"><img src="/img/depa-8.jpeg" alt="Departamento de la cartera gestionada en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="reveal"><img src="/img/depa-1.jpeg" alt="Departamento gestionado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-1b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal d1"><img src="/img/depa-2.jpeg" alt="Departamento en alquiler temporal, Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-2b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal d2"><img src="/img/depa-3.jpeg" alt="Departamento amoblado gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-3b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal d3"><img src="/img/depa-4.jpeg" alt="Departamento corporativo en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-4b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal d1"><img src="/img/depa-5.jpeg" alt="Departamento amoblado en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-5b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal d2"><img src="/img/depa-6.jpeg" alt="Dormitorio de departamento gestionado" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-6b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal d3"><img src="/img/depa-7.jpeg" alt="Sala de departamento en gestion de alquiler" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-7b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
+      <figure class="reveal"><img src="/img/depa-8.jpeg" alt="Departamento de la cartera gestionada en Lima" loading="lazy" onerror="this.closest('figure').style.display='none'"><img class="alt" src="/img/depa-8b.jpeg" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" onerror="this.style.display='none'"></figure>
     </div>
   </div>
 
