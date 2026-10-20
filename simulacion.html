@@ -2,6 +2,15 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GVP52QL4HR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GVP52QL4HR');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simula el flujo mensual de tu departamento | Renta Familiar</title>
 <meta name="description" content="Calcula cuánto puede producir tu departamento en alquiler temporal en Lima: ingresos, comisiones, limpiezas y gastos, con el flujo de caja mensual y anual estimado.">
@@ -475,6 +484,56 @@
     $(id).addEventListener("change", calcular);
   });
   calcular();
+})();
+</script>
+<script>
+(function () {
+  "use strict";
+  // Origen de la visita (?o=) para etiquetar los mensajes de WhatsApp
+  var VALIDOS = ["ga", "gb", "gc", "gd", "mt", "web"];
+  var origen = "web";
+  try {
+    var o = new URLSearchParams(location.search).get("o");
+    var guardado = null;
+    try { guardado = sessionStorage.getItem("rf_origen"); } catch (e) {}
+    if (VALIDOS.indexOf(o) !== -1) {
+      origen = o;
+      try { sessionStorage.setItem("rf_origen", o); } catch (e) {}
+    } else if (VALIDOS.indexOf(guardado) !== -1) {
+      origen = guardado;
+    }
+
+    // Agrega " [origen]" al final del texto de cada enlace a wa.me
+    var enlaces = document.querySelectorAll('a[href^="https://wa.me/"]');
+    for (var i = 0; i < enlaces.length; i++) {
+      var href = enlaces[i].getAttribute("href");
+      var q = href.indexOf("?");
+      var base = q === -1 ? href : href.slice(0, q);
+      var partes = q === -1 ? [] : href.slice(q + 1).split("&");
+      var texto = "", otros = [];
+      for (var j = 0; j < partes.length; j++) {
+        if (partes[j].indexOf("text=") === 0) {
+          texto = decodeURIComponent(partes[j].slice(5).replace(/\+/g, " "));
+        } else if (partes[j]) {
+          otros.push(partes[j]);
+        }
+      }
+      if (!texto) { texto = "Hola, quiero informaci\u00f3n"; }
+      texto = texto.replace(/ \[(ga|gb|gc|gd|mt|web)\]$/, "") + " [" + origen + "]";
+      otros.unshift("text=" + encodeURIComponent(texto));
+      enlaces[i].setAttribute("href", base + "?" + otros.join("&"));
+    }
+  } catch (e) {}
+
+  // Evento GA4 en cada clic a WhatsApp (un solo listener delegado)
+  document.addEventListener("click", function (ev) {
+    try {
+      var a = ev.target.closest('a[href^="https://wa.me/"]');
+      if (a && typeof gtag === "function") {
+        gtag("event", "clic_whatsapp", { origen: origen, pagina: location.pathname });
+      }
+    } catch (e) {}
+  });
 })();
 </script>
 </body>
