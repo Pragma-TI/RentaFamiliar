@@ -435,15 +435,16 @@
     50%,92% {opacity:1}
     100%    {opacity:0}
   }
-  /* desfase: ninguna celda cambia junto a su vecina */
-  .galeria figure:nth-child(1) img.alt{animation-delay:0s}
-  .galeria figure:nth-child(2) img.alt{animation-delay:-16s}
-  .galeria figure:nth-child(3) img.alt{animation-delay:-8s}
-  .galeria figure:nth-child(4) img.alt{animation-delay:-24s}
-  .galeria figure:nth-child(5) img.alt{animation-delay:-4s}
-  .galeria figure:nth-child(6) img.alt{animation-delay:-20s}
-  .galeria figure:nth-child(7) img.alt{animation-delay:-12s}
-  .galeria figure:nth-child(8) img.alt{animation-delay:-28s}
+  /* Dos rondas de 4 celdas: cada grupo cambia en bloque y se alternan,
+     de modo que algo se mueve cada 8 s. Ronda 1 va primero. */
+  .galeria figure:nth-child(2) img.alt,
+  .galeria figure:nth-child(3) img.alt,
+  .galeria figure:nth-child(5) img.alt,
+  .galeria figure:nth-child(8) img.alt{animation-delay:-8s}
+  .galeria figure:nth-child(1) img.alt,
+  .galeria figure:nth-child(4) img.alt,
+  .galeria figure:nth-child(6) img.alt,
+  .galeria figure:nth-child(7) img.alt{animation-delay:0s}
   @media (prefers-reduced-motion: reduce){
     .galeria figure img.alt{animation:none;opacity:0}
   }
