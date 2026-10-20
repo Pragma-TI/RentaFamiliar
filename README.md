@@ -36,6 +36,33 @@ Sitio estático de una página (index.html autocontenido: CSS y logo incrustados
 
 Editar `index.html` → commit → push. Vercel (o Pages) redespliega solo.
 
+## Medición de campañas (GA4 + origen en WhatsApp)
+
+- **Google Analytics 4**: propiedad *Jorge De La Torre* (cuenta *PlataformaVacacional*, usuario
+  `hostfamily.limaperu@gmail.com`), flujo web **Renta Familiar**, ID de medición **`G-GVP52QL4HR`**.
+  El snippet está en el `<head>` de las 6 páginas.
+- **Origen de la visita**: el parámetro `?o=` de la URL se guarda en `sessionStorage` (`rf_origen`)
+  y se agrega al final del texto de todos los enlaces a `wa.me`, por ejemplo
+  `Hola, quiero información [ga]`. Sin parámetro (ni valor guardado) se usa `[web]`.
+- **Evento GA4** `clic_whatsapp` con parámetros `origen` y `pagina` en cada clic a WhatsApp.
+
+### Códigos de origen
+
+Solo se aceptan estos valores; cualquier otro se ignora. Al crear un anuncio, la URL final lleva
+su código (ej. `https://rentafamiliar.com/migrar?o=ga`).
+
+| Código | Canal | Campaña / uso |
+|---|---|---|
+| `ga` | Google Ads | _(definir)_ |
+| `gb` | Google Ads | _(definir)_ |
+| `gc` | Google Ads | _(definir)_ |
+| `gd` | Google Ads | _(definir)_ |
+| `mt` | Meta (Facebook / Instagram) | _(definir)_ |
+| `web` | Orgánico / directo | valor por defecto |
+
+Para agregar un código nuevo hay que añadirlo en `VALIDOS` y en la expresión del sufijo del
+script de origen, en cada página que tenga enlaces a WhatsApp.
+
 ## Nota
 
 Al apuntar el apex a este sitio, el sitio actual de Hostinger Builder (Host Family)
