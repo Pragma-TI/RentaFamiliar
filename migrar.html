@@ -421,6 +421,17 @@
     .galeria img{height:150px}
   }
 
+  /* ====== CTA con tematica WhatsApp (agregado) ====== */
+  .cta-wsp{
+    background:#25D366;
+    box-shadow:0 12px 28px rgba(37,211,102,.38);
+    display:inline-flex;align-items:center;gap:12px;
+  }
+  .cta-wsp:hover{background:#1EBE5B}
+  .ic-cta{width:24px;height:24px;flex:0 0 24px;display:block}
+  .cta-sub a{display:inline-flex;align-items:center;gap:5px}
+  .ic-mini{width:13px;height:13px;flex:0 0 13px;display:block}
+
   /* ====== CARTERA: alternancia suave entre las dos tandas (agregado) ======
      Ciclo de 32 s: ~13,5 s cada foto y 2,5 s de fundido. La segunda foto va
      encima de la primera, asi que si aun no carga se sigue viendo la de abajo. */
@@ -608,9 +619,9 @@
     <h2 class="reveal d1" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin-bottom:10px">&#191;Cu&#225;nto puede producir tu departamento?</h2>
     <p class="honesto reveal d2">Cu&#233;ntanos d&#243;nde est&#225; tu propiedad y c&#243;mo opera hoy.
       Te damos una <b>evaluaci&#243;n sin costo</b> de su potencial y de lo que implicar&#237;a migrar.</p>
-    <a class="cta-btn reveal d3" href="https://wa.me/51998320401?text=Hola%2C%20ya%20deleg%C3%A9%20mi%20Airbnb%20y%20quiero%20evaluar%20migrar%20a%20Renta%20Familiar">&#128172; Quiero evaluar mi caso</a>
+    <a class="cta-btn cta-wsp reveal d3" href="https://wa.me/51998320401?text=Hola%2C%20ya%20deleg%C3%A9%20mi%20Airbnb%20y%20quiero%20evaluar%20migrar%20a%20Renta%20Familiar"><svg class="ic-cta" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>Quiero evaluar mi caso</a>
     <div class="btn-fila reveal d3"><a class="btn-sec" href="/simulacion">Calcula tu flujo en el simulador &#8594;</a></div>
-    <div class="cta-sub reveal d4">o escr&#237;benos al <a href="https://wa.me/51998320401"><span class="mono">+51 998 320 401</span></a> &#183; <a href="mailto:hostfamily.limaperu@gmail.com"><span class="mono">hostfamily.limaperu@gmail.com</span></a></div>
+    <div class="cta-sub reveal d4">o escr&#237;benos al <a href="https://wa.me/51998320401"><svg class="ic-mini" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span class="mono">+51 998 320 401</span></a> &#183; <a href="mailto:hostfamily.limaperu@gmail.com"><svg class="ic-mini" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm2.6 0L12 11.55 19.4 6H4.6ZM20 7.87l-7.4 5.55a1 1 0 0 1-1.2 0L4 7.87V18h16V7.87Z"/></svg><span class="mono">hostfamily.limaperu@gmail.com</span></a></div>
   </div>
 
   <!-- CONOCE MAS -> PAGINA PRINCIPAL -->
