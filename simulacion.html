@@ -374,7 +374,7 @@
       </div>
       <div class="dos">
         <div class="campo">
-          <label for="gastos">Gastos fijos del depa (S/ mes)</label>
+          <label for="gastos">Gastos operativos del depa (S/ mes)</label>
           <input type="number" id="gastos" value="250" min="0" step="10">
           <div class="ayuda">Luz, agua, internet, insumos</div>
         </div>
@@ -398,9 +398,9 @@
         <tr><td>Ingreso por alojamiento</td><td id="v-alojamiento">S/ 0</td></tr>
         <tr class="grupo"><td>Egresos</td><td></td></tr>
         <tr class="resta"><td>Comisi&#243;n plataforma Airbnb (3%)</td><td id="v-airbnb">S/ 0</td></tr>
-        <tr class="resta"><td id="l-rf">Comisi&#243;n Renta Familiar</td><td id="v-rf">S/ 0</td></tr>
         <tr class="resta"><td id="l-limpiezas">Limpiezas</td><td id="v-limpiezas">S/ 0</td></tr>
-        <tr class="resta"><td>Gastos fijos del departamento</td><td id="v-gastos">S/ 0</td></tr>
+        <tr class="resta"><td id="l-rf">Comisi&#243;n Renta Familiar</td><td id="v-rf">S/ 0</td></tr>
+        <tr class="resta"><td>Gastos operativos del departamento</td><td id="v-gastos">S/ 0</td></tr>
       </table>
       <div class="neto"><span class="eti">Neto mensual para ti (por depa)</span><span class="val pos" id="v-neto">S/ 0</span></div>
       <div class="anual">
@@ -447,15 +447,16 @@
 
     // Airbnb 3% sobre el alojamiento
     var feeAirbnb = alojamiento * 0.03;
-    // Comision RF sobre ingreso neto de plataforma, sin tarifa de limpieza
-    var feeRF  = (alojamiento - feeAirbnb) * comision;
+    // Comision RF sobre lo que queda despues de Airbnb y de las limpiezas,
+    // antes de los gastos operativos del departamento
+    var feeRF  = (alojamiento - feeAirbnb - limpCosto) * comision;
 
     var neto = alojamiento - feeAirbnb - feeRF - limpCosto - gastos;
 
     $("v-noches").textContent      = Math.round(noches) + " noches (" + Math.round(estadias) + " estadias)";
     $("v-alojamiento").textContent = fmt(alojamiento);
     $("v-airbnb").textContent      = "- " + fmt(feeAirbnb);
-    $("l-rf").textContent          = "Comision Renta Familiar (" + Math.round(comision * 100) + "%)";
+    $("l-rf").textContent          = "Comision Renta Familiar (" + Math.round(comision * 100) + "%, despues de limpiezas)";
     $("v-rf").textContent          = "- " + fmt(feeRF);
     $("l-limpiezas").textContent   = pagaHuesped
         ? "Limpiezas: cubiertas por el huesped (estandar Airbnb)"
